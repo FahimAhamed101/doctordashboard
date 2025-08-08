@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import AppointmentStatusChart from "./DonutChart";
+import { StatCard } from "../../components/dashboard-page/StatCard";
+import { AppointmentsTable } from "../../components/dashboard-page/AppointmentsTable";
+import { ActivityList } from "../../components/dashboard-page/ActivityList";
+import { PeakHoursChart } from "../../components/dashboard-page/PeakHoursChart";
+import AppointmentStatusChart from "../../components/dashboard-page/DonutChart";
 
 export default function Dashboard() {
   const [stats] = useState([
@@ -137,190 +140,17 @@ export default function Dashboard() {
       {/* Stats Cards */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg  p-3 shadow-md">
-           <div className="mb-2">
-                {stat.icon}
-              </div> <div className="">
-              <div>
-                <h3 className="text-sm font-medium text-gray-600">{stat.title}</h3>
-                <div className="mt-2 flex w-full justify-between">
-                  <div className="text-2xl font-bold">{stat.value}</div>
-                  <div className={`flex items-center h-6 p-1 rounded-4xl  text-sm ${stat.isPositive ? ' bg-[#EEFEE7]  text-green-600' : ' bg-[#FEF2F2] text-red-600'}`}>
-                    {stat.isPositive ? (
-                      <ArrowUpIcon className="h-3 w-3 mr-1" />
-                    ) : (
-                      <ArrowDownIcon className="h-3 w-3 mr-1" />
-                    )}
-                    {stat.percentage}
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
+          <StatCard key={index} {...stat} />
         ))}
       </div>
 
       {/* Main Content */}
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Appointments Table */}
-        <div className="bg-white rounded-lg 
-         shadow-sm lg:col-span-2">
-          <div className="flex items-center justify-between p-3 ">
-            <h2 className="text-lg font-semibold">Appointments</h2>
-            <button className="text-sm text-blue-600 hover:underline">View all</button>
-          </div>
-          <div className="">
-            <div className="overflow-x-auto">
-           <table className="min-w-full">
-  <thead className="border-none">
-    <tr className="bg-[#EDF4FA]">
-      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-        Patients Name
-      </th>
-      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-        Email
-      </th>
-      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-        Gender
-      </th>
-      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-        Visit Reason
-      </th>
-      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-        Last Visit
-      </th>
-    </tr>
-  </thead>
-  <tbody className="bg-white">
-    {appointments.map((appointment, index) => (
-      <tr key={index} className="border-none">
-        <td className="px-4 py-3 whitespace-nowrap">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 h-6 w-6 rounded-full bg-[#D6EBFD] flex items-center justify-center text-xs font-medium text-[#2E8BC9]">
-              {appointment.name.charAt(0)}
-            </div>
-            <div className="ml-2 font-medium">{appointment.name}</div>
-          </div>
-        </td>
-        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
-          {appointment.email}
-        </td>
-        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
-          {appointment.gender}
-        </td>
-        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
-          {appointment.reason}
-        </td>
-        <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
-          {appointment.lastVisit}
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-            </div>
-          </div>
-        </div>
-
-        {/* Today's Activity */}
-        <div className="bg-white rounded-lg   shadow-sm">
-          <div className="flex items-center justify-between p-3 ">
-            <h2 className="text-sm ">Today's Activity</h2>
-            <button className="text-sm text-blue-600 hover:underline">View all</button>
-          </div>
-          <div className="p-3 space-y-2">
-            {activities.map((activity, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between pb-3 border-b first:border-[#93531F] last:border-none border-[#DCDCDC] last:pb-0"
-              >
-                <div>
-                  <p className="font-medium">{activity.name}</p>
-                  <p className="text-sm text-gray-500">
-                    {activity.time} - {activity.doctor}
-                  </p>
-                </div>
-                {activity.status === "check-in" ? (
-                  <button className="px-3 py-1 text-sm border shadow-md border-yellow-200 bg-[#FBF7EB] text-yellow-800 rounded-md hover:bg-yellow-200">
-                    Check In
-                  </button>
-                ) : (
-                  <button className="px-3 py-1 text-sm bg-[#1A588A] text-white border border-gray-200 rounded-md hover:bg-[#2E8BC9]">
-                    Details
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Peak Hours Chart */}
-        <div className="bg-white rounded-lg  shadow-sm lg:col-span-2">
-          <div className="p-6 ">
-            <h2 className="text-lg font-semibold">Peak Hours</h2>
-            <p className="text-sm text-gray-500 mt-1">
-              This graph displays the number of appointment peak hour.
-            </p>
-          </div>
-          <div className="p-6">
-            <div className="h-[300px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={peakHoursData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e0e0e0" />
-                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                  <YAxis axisLine={false} tickLine={false} />
-                  <Tooltip cursor={{ fill: "transparent" }} />
-                  <Bar dataKey="appointments" fill="#2E8BC9" radius={[4, 4, 0, 0]} barSize={20} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div>
-        </div>
-
-        {/* Appointment Status Pie Chart */}
+        <AppointmentsTable appointments={appointments} />
+        <ActivityList activities={activities} />
+        <PeakHoursChart data={peakHoursData} />
         <AppointmentStatusChart />
       </div>
     </div>
-  );
-}
-
-function ArrowUpIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m5 12 7-7 7 7" />
-      <path d="M12 19V5" />
-    </svg>
-  );
-}
-
-function ArrowDownIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M12 5v14" />
-      <path d="m19 12-7 7-7-7" />
-    </svg>
   );
 }

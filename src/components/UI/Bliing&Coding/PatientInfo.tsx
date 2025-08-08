@@ -5,7 +5,7 @@ export default function PatientInfo() {
     return (
         <div className='mt-[32px]'>
             <form method="post">
-                <div className='flex items-stretch justify-center gap-6 flex-wrap md:flex-nowrap'>
+                <div className='flex items-stretch justify-center gap-8 flex-wrap md:flex-nowrap'>
                     <div className='w-full'>
                         <InputComponent
                             inputComponentProps={{

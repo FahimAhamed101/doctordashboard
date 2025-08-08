@@ -409,7 +409,10 @@ const [vitalSigns, setVitalSigns] = useState<VitalSigns>({
 
           {/* Last Appointment Time */}
           <div className="space-y-2">
-            <p className="text-sm font-medium text-gray-700">Last Appointment Time</p>
+           <div className="relative w-full">
+  <p className="text-sm font-medium text-gray-700 inline-block pr-2 bg-white relative z-10">Last Appointment Time</p>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
             <div className="flex items-center justify-between text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-4 h-4" />
@@ -419,8 +422,11 @@ const [vitalSigns, setVitalSigns] = useState<VitalSigns>({
                 <Clock className="w-4 h-4" />
                 <span>10:30 PM</span>
               </div>
-              <div className="flex items-center space-x-1 text-blue-600">
-                <CheckCircle className="w-4 h-4" />
+              <div className="flex items-center space-x-1 text-[#237B10]">
+               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.33331 9.3335L5.66665 11.6668L12.6666 4.3335" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                 <span>Complete</span>
               </div>
             </div>

@@ -1,8 +1,16 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin, Plus, Trash2 } from "lucide-react";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "./firebase";
+import dynamic from "next/dynamic";
+
+const FirebaseMap = dynamic(() => import("./FirebaseMap"), {
+  ssr: false,
+  loading: () => <div>Loading map...</div>
+});
 
 interface Qualification {
   id: number;
@@ -12,25 +20,31 @@ interface Qualification {
 }
 
 export default function DoctorProfileForm() {
-  const [qualifications, setQualifications] = useState<Qualification[]>([
-    {
-      id: 1,
-      degree: "Doctor of Medicine (M.D.)",
-      institution: "University of California, San Francisco",
-      year: "2008"
-    },
-    {
-      id: 2,
-      degree: "Bachelor of Science in Biology",
-      institution: "University of California, San Francisco",
-      year: "2008"
-    }
-  ]);
+  const [doctorId] = useState("doctor_123"); // Replace with actual doctor ID
+  const [doctorData, setDoctorData] = useState<any>(null);
   
+  const [qualifications, setQualifications] = useState<Qualification[]>([]);
   const [visitType, setVisitType] = useState("new-patient");
+  const [location, setLocation] = useState("");
+
+  useEffect(() => {
+    const fetchDoctorData = async () => {
+      const docRef = doc(db, "doctors", doctorId);
+      const docSnap = await getDoc(docRef);
+      
+      if (docSnap.exists()) {
+        setDoctorData(docSnap.data());
+        setQualifications(docSnap.data().qualifications || []);
+        setVisitType(docSnap.data().visitType || "new-patient");
+        setLocation(docSnap.data().location || "");
+      }
+    };
+
+    fetchDoctorData();
+  }, [doctorId]);
 
   const addQualification = () => {
-    setQualifications([
+    const newQualifications = [
       ...qualifications,
       {
         id: qualifications.length + 1,
@@ -38,13 +52,23 @@ export default function DoctorProfileForm() {
         institution: "",
         year: ""
       }
-    ]);
+    ];
+    setQualifications(newQualifications);
+    saveToFirebase({ qualifications: newQualifications });
   };
 
   const removeQualification = (id: number) => {
-    setQualifications(qualifications.filter(q => q.id !== id));
+    const newQualifications = qualifications.filter(q => q.id !== id);
+    setQualifications(newQualifications);
+    saveToFirebase({ qualifications: newQualifications });
   };
 
+  const saveToFirebase = async (data: any) => {
+    await setDoc(doc(db, "doctors", doctorId), {
+      ...doctorData,
+      ...data
+    }, { merge: true });
+  };
   return (
     <div className="max-w-2/3 mx-auto bg-white p-6 space-y-6">
       {/* Profile Photo */}
@@ -130,23 +154,28 @@ export default function DoctorProfileForm() {
         />
       </div>
 
-      {/* Office Location */}
-      <div className="space-y-2">
+       <div className="space-y-2">
         <label htmlFor="location" className="block text-sm font-medium text-gray-700">
           Office Location
         </label>
         <textarea
           id="location"
-          defaultValue="Calle Ceiba #142, Urb. Alturas de Monte Verde, Trujillo Alto, PR 00976"
-          className="block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm resize-none"
+          value={location}
+          onChange={(e) => {
+            setLocation(e.target.value);
+            saveToFirebase({ location: e.target.value });
+          }}
+          className="block w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm resize-none"
           rows={2}
         />
-        <div className="flex items-center justify-between text-xs text-blue-600">
-          <span>https://maps.app.goo.gl/qywnWNkbzYuMPooP</span>
-          <button className="p-1 text-red-500 hover:text-red-700 rounded-md hover:bg-gray-100">
-            <Trash2 className="w-4 h-4" />
-          </button>
-        </div>
+      </div>
+
+      {/* Firebase Map */}
+      <div className="space-y-2">
+        <FirebaseMap 
+          doctorId={doctorId}
+          initialPosition={doctorData?.location || { lat: 0, lng: 0 }}
+        />
       </div>
 
       {/* Map */}

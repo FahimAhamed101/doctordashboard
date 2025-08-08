@@ -69,19 +69,53 @@ export default function StaffInfoForm() {
                 />
               </div>
             </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Temporary Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                placeholder="ksdjfb83974"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            
+         <div className="flex flex-col md:flex-row gap-4">
+  <div className="flex-1 space-y-2">
+    <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+      Password
+    </label>
+    <input
+      id="password"
+      type="password"
+      placeholder="ksdjfb83974"
+      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+  
+  <div className="flex-1 space-y-2">
+    <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+      Role
+    </label>
+    <div className="relative">
+      <select 
+        id="role"
+        className="w-full px-3 py-2.5 text-sm border border-gray-300 shadow-sm rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      >
+        <option value="">Select Role</option>
+        <option value="doctor">Doctor</option>
+        <option value="patient">Patient</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+        <svg
+          className="w-5 h-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+         
+          
             <button
               type="submit"
               className="w-full px-4 py-2 bg-[#2E8BC9] text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"

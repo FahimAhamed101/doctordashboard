@@ -7,7 +7,7 @@ export default function Insurance() {
         <div className='mt-8'>
             <form method="post">
                 <h3 className='text-[#7C7C7C] font-[500] text-[16px]'>Insurance Information (Boxes 9-13)</h3>
-                <div className='mt-4'>
+                <div className='mt-4 flex flex-col gap-4'>
                     <div>
                         <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9">Box 9: Other Insured's Name</label>
                     </div>

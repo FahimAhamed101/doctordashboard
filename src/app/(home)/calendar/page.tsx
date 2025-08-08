@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Search, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
 interface Doctor {
   id: string
   name: string
@@ -24,18 +25,20 @@ interface CalendarData {
 
 const doctors: Doctor[] = [
   { id: "PG0758", name: "Rami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-    { id: "J0K1L2", name: "Tariq Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-      { id: "V2W3X4", name: "Maya Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-        { id: "D4E5F6", name: "Sami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
-  // ... rest of your doctors data
+  { id: "J0K1L2", name: "Tariq Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
+  { id: "V2W3X4", name: "Maya Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
+  { id: "D4E5F6", name: "Sami Rahman Chowdhury", avatar: "/placeholder.svg?height=32&width=32" },
 ]
 
 const calendarData: CalendarData = {
   "2025-02": {
     1: [{ type: "morning", slots: "10+", color: "blue" }],
-     5: [{ type: "afternoon", slots: "20+", color: "red" }],
-      15: [{ type: "evening", slots: "20+", color: "red" }],
-    // ... rest of your calendar data
+    5: [{ type: "afternoon", slots: "20+", color: "red" }],
+    15: [{ type: "evening", slots: "20+", color: "red" }],
+    17: [
+      { type: "morning", slots: "5+", color: "blue" },
+      { type: "afternoon", slots: "15+", color: "green" }
+    ],
   }
 }
 
@@ -61,27 +64,13 @@ export default function DoctorAppointmentScheduler() {
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay()
   }
 
-  const getSlotColor = (type: string): string => {
-    switch (type) {
-      case "morning":
-        return "bg-blue-500"
-      case "afternoon":
-        return "bg-green-500"
-      case "evening":
-        return "bg-orange-500"
-      default:
-        return "bg-gray-400"
-    }
-  }
-
   const renderCalendarGrid = () => {
     const daysInMonth = getDaysInMonth(currentDate)
     const firstDayIndex = getFirstDayOfMonth(currentDate)
-    const totalCells = Math.ceil((daysInMonth + firstDayIndex) / 7) * 7
     const weeks = []
-
     let dayCounter = 1
-    for (let week = 0; week < totalCells / 7; week++) {
+
+    for (let week = 0; week < 6; week++) {
       const weekDays = []
       
       for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
@@ -89,7 +78,7 @@ export default function DoctorAppointmentScheduler() {
         
         if (cellIndex < firstDayIndex || dayCounter > daysInMonth) {
           weekDays.push(
-            <div key={`empty-${cellIndex}`} className="aspect-2/3 border border-gray-200 bg-white"></div>
+            <div key={`empty-${week}-${dayOfWeek}`} className="h-50 border border-gray-200 bg-white"></div>
           )
         } else {
           const day = dayCounter
@@ -97,16 +86,30 @@ export default function DoctorAppointmentScheduler() {
           const dayData = calendarData[dateKey]?.[day] || []
 
           weekDays.push(
-            <div key={day} className={`aspect-2/3 border border-gray-200 p-2 relative bg-white ${day === 17 ? 'bg-blue-500' : ''}`}>
-              <div className={`text-md text-end font-medium mb-1 ${day === 17 ? 'text-white ' : 'text-gray-900'}`}>{day}</div>
-              <div className="space-y-0.5">
+            <div 
+              key={day} 
+              className={`h-50 border border-gray-200 p-2 relative bg-white ${
+                day === new Date().getDate() && currentDate.getMonth() === new Date().getMonth() ? 'bg-blue-50' : ''
+              }`}
+            >
+              <div className={`text-sm text-end font-medium ${day === new Date().getDate() ? 'text-blue-600' : 'text-gray-900'}`}>
+                {day}
+              </div>
+              <div className="space-y-2 mt-2">
                 {dayData.map((slot, index) => (
                   <div
                     key={index}
-                    className={`text-xs px-1.5 py-0.5 rounded font-medium flex justify-between  ${slot.type === 'evening' ? 'bg-[#FBF7EB] text-[#93531F]' : slot.type === 'morning' ? 'bg-[#EEFEE7] text-[#237B10]' :  slot.type === 'afternoon' ? 'bg-[#F0F5FE] text-[#2B4DCA]' : '#EDF0F3'}`}
-                   
+                    className={`text-xs px-2 py-1 rounded font-medium ${
+                      slot.type === 'evening' ? 'bg-[#FBF7EB] text-[#93531F]' :
+                      slot.type === 'morning' ? 'bg-[#EEFEE7] text-[#237B10]' :
+                      slot.type === 'afternoon' ? 'bg-[#F0F5FE] text-[#2B4DCA]' :
+                      'bg-gray-100'
+                    }`}
                   >
-                   <div> Dr.sakil</div>{slot.slots}
+                    <div className="flex justify-between">
+                      <span>Dr. Sakil</span>
+                      <span>{slot.slots}</span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -121,6 +124,8 @@ export default function DoctorAppointmentScheduler() {
           {weekDays}
         </div>
       )
+      
+      if (dayCounter > daysInMonth) break
     }
 
     return weeks
@@ -145,36 +150,29 @@ export default function DoctorAppointmentScheduler() {
         </div>
 
         <div className="flex-1 overflow-y-auto">
-<div className="flex p-4 bg-[#EDF4FA]">
- <div className="text-xs text-gray-500 w-12 mr-3">
-  ID
- </div>
- <div className="flex-1">
-  <div className="text-xs text-gray-500 w-12 mr-3">
- Doctor
- </div>
- </div>
-  
-
-</div>
-
+          <div className="flex p-4 bg-[#EDF4FA]">
+            <div className="text-xs text-gray-500 w-12 mr-3">ID</div>
+            <div className="flex-1">
+              <div className="text-xs text-gray-500 w-12 mr-3">Doctor</div>
+            </div>
+          </div>
 
           {filteredDoctors.map((doctor) => (
             <div
               key={doctor.id}
               className={`flex items-center font-semibold p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 ${
-                selectedDoctor.id === doctor.id ? "bg-white " : ""
+                selectedDoctor.id === doctor.id ? "bg-white" : ""
               }`}
               onClick={() => setSelectedDoctor(doctor)}
             >
               <div className="text-xs text-gray-500 w-12 mr-3">{doctor.id}</div>
               <div className="h-8 w-8 mr-3 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                <Image src="/placeholder.svg" width={100} height={100} alt="images"  />
+                <Image src="/placeholder.svg" width={100} height={100} alt="images" />
               </div>
               <div className="flex-1 min-w-0">
-                <Link href="/calendar/details">   <div className="text-sm font-medium text-gray-900 truncate">{doctor.name}</div>
+                <Link href="/calendar/details">
+                  <div className="text-sm font-medium text-gray-900 truncate">{doctor.name}</div>
                 </Link>
-             
               </div>
             </div>
           ))}
@@ -210,19 +208,21 @@ export default function DoctorAppointmentScheduler() {
         </div>
 
         {/* Calendar */}
-        <div className="p-4">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 w-fit h-fit">
+        <div className="p-4 flex-1 overflow-auto">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 w-full">
             {/* Calendar Header */}
-            <div className="grid grid-cols-12 border-b border-gray-200">
+            <div className="grid grid-cols-7 border-b border-gray-200">
               {weekDays.map((day) => (
-                <div key={day} className="p-3 text-center text-sm font-medium text-gray-700 bg-gray-50 border-r border-gray-200 last:border-r-0 w-24">
+                <div key={day} className="p-3 text-center text-sm font-medium text-gray-700 bg-gray-50 border-r border-gray-200 last:border-r-0">
                   {day}
                 </div>
               ))}
             </div>
 
             {/* Calendar Grid */}
-            <div className="flex flex-col">{renderCalendarGrid()}</div>
+            <div className="grid grid-rows-6 min-h-[800px]">
+              {renderCalendarGrid()}
+            </div>
           </div>
         </div>
       </div>

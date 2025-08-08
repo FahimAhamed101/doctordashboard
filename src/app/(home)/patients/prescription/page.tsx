@@ -142,7 +142,34 @@ export default function PatientDashboard() {
 
           {/* Last Appointment Time */}
           <div className="space-y-2">
-            <p className="text-sm font-medium text-gray-700">Last Appointment Time</p>
+               <div className="relative w-full">
+     <div className="relative w-full">
+     <div className="relative w-full">
+     <div className="relative w-full">
+     <div className="relative w-full">
+     <div className="relative w-full">
+     <div className="relative w-full">
+      <div className="relative w-full">
+     <div className="relative w-full">
+  <p className="text-sm font-medium text-gray-700 inline-block pr-2 bg-white relative z-10">Last Appointment Time</p>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
+  <span className="absolute left-0 right-0 top-1/2 h-px bg-gray-200 -z-0"></span>
+</div>
             <div className="flex items-center justify-between text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-4 h-4" />

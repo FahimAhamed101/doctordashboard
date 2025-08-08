@@ -3,8 +3,8 @@ import InputComponent from "./InputComponent";
 
 export default function ProviderInfo() {
   return (
-    <div>
-      <div className="flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4">
+    <div className="">
+      <div className="flex items-end  justify-center  gap-6 flex-wrap md:flex-nowrap mt-4">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{
@@ -38,7 +38,7 @@ export default function ProviderInfo() {
           />
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 space-y-4">
         <label
           htmlFor="box-23"
           className="font-[500] text-[18px] text-[#3D3D3D]"
@@ -126,7 +126,7 @@ export default function ProviderInfo() {
           }}
         />
       </div>
-      <div className="flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4">
+      <div className="flex items-end justify-center gap-6 space-y-4 flex-wrap md:flex-nowrap mt-4">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{
@@ -247,7 +247,7 @@ export default function ProviderInfo() {
           }}
         />
       </div>
-      <div className="flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4">
+      <div className="flex items-end justify-center gap-6 flex-wrap space-y-4 md:flex-nowrap mt-4">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{

@@ -5,8 +5,8 @@ export default function ClinicalInfo() {
     return (
         <div className='mt-4'>
             <div>
-                <label htmlFor="box-10" className='font-[500] text-[18px] text-[#3D3D3D]'>Box 10: Is Patient's Condition Related to:</label>
-                <div className='flex items-center justify-between mt-8'>
+                <label htmlFor="box-10" className='  font-[500] text-[18px] text-[#3D3D3D]'>Box 10: Is Patient's Condition Related to:</label>
+                <div className='flex items-center justify-between gap-4 mt-8'>
                     <p className='font-[500] text-[18px] text-[#3D3D3D]'>A. Employment</p>
                     <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
                         <div className='flex items-center gap-4'>
@@ -19,7 +19,7 @@ export default function ClinicalInfo() {
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center justify-between mt-8'>
+                <div className='flex items-center justify-between gap-4 mt-8'>
                     <p className='font-[500] text-[18px] text-[#3D3D3D]'>B. Auto Accident?</p>
                     <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
                         <div className='flex items-center gap-4'>
@@ -32,7 +32,7 @@ export default function ClinicalInfo() {
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center justify-between mt-8'>
+                <div className='flex items-center justify-between gap-4 mt-8'>
                     <p className='font-[500] text-[18px] text-[#3D3D3D]'>C. Other Accident?</p>
                     <div className='flex items-center justify-center gap-8 mr-0 md:mr-80'>
                         <div className='flex items-center gap-4'>
@@ -46,7 +46,7 @@ export default function ClinicalInfo() {
                     </div>
                 </div>
             </div>
-            <div className='mt-6'>
+            <div className='mt-6 gap-4'>
                 <InputComponent
                     inputComponentProps={{
                         label: "Box 10d: Claim Codes (Designated by NUCC)",
