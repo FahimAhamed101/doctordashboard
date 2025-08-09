@@ -128,10 +128,27 @@ const MedicalInformationPage = () => {
             <div className="mb-8">
               <Link href="/insurance-info/add-new">
                 {insuranceCards.length === 0 ? (
+                  <div>
                   <Button className="w-full px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-action-hover transition-colors font-medium">
-                    + Add Primary Card
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4V20" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 12H20" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+ Add Primary Card
                   </Button>
-                ) : (
+              <div className="w-full flex justify-center">
+                <Link href="/patients/insurenceform " className="w-full"> <button className="w-full flex items-center justify-center gap-2 border border-primary-500 px-6 py-3 text-[#2E8BC9] rounded-lg hover:bg-action-hover font-medium">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4V20" stroke="#2E8BC9" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 12H20" stroke="#2E8BC9" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+    <span>Add Other Card</span>
+  </button>
+                </Link>
+ 
+</div>
+                   
+               </div> ) : (
                   <Button className="w-full border border-primary-500 px-6 py-3 bg-white text-primary-500 rounded-lg hover:bg-action-hover transition-colors font-medium hover:text-white">
                     + Add Other Card
                   </Button>

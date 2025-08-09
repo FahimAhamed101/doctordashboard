@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { Send, User, Search, MessageCircle, MessageSquare, Mail } from "lucide-react"
+import { SetStateAction, useState } from "react"
+import { Send, User, Search, MessageCircle, MessageSquare, Mail, ChevronDown } from "lucide-react"
 import Link from "next/link"
 
 interface Message {
@@ -121,8 +121,16 @@ const getAvatarColor = (initial: string) => {
   return colors[charCode % colors.length]
 }
 
+
 const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
-  return (
+   const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleOptionSelect = (value: string, label: SetStateAction<string>) => {
+    setSelectedOption(label);
+    setIsOpen(false);
+    console.log('Selected:', value);
+  }; return (
     <div className="w-full p-2 md:w-1/3 lg:w-1/4  px-2 bg-white flex flex-col">
       {/* Sidebar header */}
       <div className="p-4 ">
@@ -155,22 +163,57 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
 
           <span>SMS</span>
         </div>
-        <div className="flex items-center gap-2 p-2 rounded-lg text-gray-600 hover:bg-gray-50 cursor-pointer">
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.02637 5.375H21.0488C21.5812 5.37504 22.0185 5.77879 22.0732 6.29492L22.0791 6.39941V17.9326C22.079 18.4939 21.6226 18.951 21.0527 18.9512H3.02637C2.45639 18.9512 2.00006 18.494 2 17.9326V6.39355C2.00011 5.83514 2.45722 5.375 3.02637 5.375Z" fill="#FFCC67" stroke="white"/>
-<mask id="path-2-inside-1_3247_54067" fill="white">
-<path d="M21.2587 17.9219V17.9369C21.2587 18.0531 21.1649 18.1469 21.0487 18.1469H21.0337L21.2587 17.9219Z"/>
-</mask>
-<path d="M21.2587 17.9219V17.9369C21.2587 18.0531 21.1649 18.1469 21.0487 18.1469H21.0337L21.2587 17.9219Z" fill="#E6E6E5"/>
-<path d="M21.2587 17.9219H22.2587V15.5077L20.5516 17.2148L21.2587 17.9219ZM21.0337 18.1469L20.3266 17.4398L18.6195 19.1469H21.0337V18.1469ZM21.2587 17.9219H20.2587V17.9369H21.2587H22.2587V17.9219H21.2587ZM21.2587 17.9369H20.2587C20.2587 17.5008 20.6127 17.1469 21.0487 17.1469V18.1469V19.1469C21.7172 19.1469 22.2587 18.6054 22.2587 17.9369H21.2587ZM21.0487 18.1469V17.1469H21.0337V18.1469V19.1469H21.0487V18.1469ZM21.0337 18.1469L21.7408 18.854L21.9658 18.629L21.2587 17.9219L20.5516 17.2148L20.3266 17.4398L21.0337 18.1469Z" fill="white" mask="url(#path-2-inside-1_3247_54067)"/>
-<path d="M12.4798 13.2784C12.2248 13.4959 11.8498 13.4959 11.5948 13.2784L2.09229 5.19336L11.5573 14.4971C11.8235 14.7596 12.251 14.7596 12.5173 14.4971L21.9823 5.19336L12.4798 13.2784Z" fill="#E7B95E"/>
-<path d="M14.5537 11.7266L22.2675 18.8516L13.98 12.2553L14.5537 11.7266Z" fill="#E7B95E"/>
-<path d="M9.47607 11.7266L1.78857 18.8516L10.0536 12.2553L9.47607 11.7266Z" fill="#E7B95E"/>
-</svg>
 
-        <Link href="inbox/email"><span>Email</span></Link>  
+        {/* SMS */}
+        <div className="flex items-center gap-3 p-3 rounded-lg text-gray-600 hover:bg-gray-50 cursor-pointer transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1.25C17.9046 1.25 22.7498 5.83823 22.75 11.5664C22.75 17.2948 17.9047 21.8828 12 21.8828C11.3041 21.8837 10.6099 21.8196 9.92676 21.6914C9.68967 21.6468 9.53881 21.6189 9.42676 21.6035C9.3819 21.5974 9.35301 21.5919 9.33594 21.5908C9.36238 21.5861 9.34271 21.584 9.22754 21.6387C9.11311 21.693 8.96086 21.7743 8.72754 21.8984C7.29581 22.6598 5.62475 22.9295 4.01367 22.6299C3.75368 22.5814 3.53849 22.3996 3.44727 22.1514C3.35611 21.903 3.40246 21.6252 3.56934 21.4199C4.03728 20.8443 4.35881 20.1507 4.50098 19.4043C4.53903 19.1992 4.45189 18.921 4.18457 18.6494C2.36977 16.8066 1.25 14.3141 1.25 11.5664C1.25017 5.83823 6.09533 1.25 12 1.25ZM8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13H8.00879C8.56107 13 9.00879 12.5523 9.00879 12C9.00879 11.4477 8.56107 11 8.00879 11H8ZM11.9951 11C11.443 11.0002 10.9951 11.4478 10.9951 12C10.9951 12.5522 11.443 12.9998 11.9951 13H12.0049L12.1064 12.9951C12.6109 12.9441 13.0049 12.5179 13.0049 12C13.0049 11.4821 12.6109 11.0559 12.1064 11.0049L12.0049 11H11.9951ZM15.9912 11C15.4389 11 14.9912 11.4477 14.9912 12C14.9912 12.5523 15.4389 13 15.9912 13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H15.9912Z" fill="#2E8BC9"/>
+          </svg>
+          <span>SMS</span>
+        </div>
+
+        {/* Email Dropdown */}
+        <div className="relative">
+          <div 
+            className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-6 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="16" rx="2" fill="#FCD34D" stroke="none"/>
+                  <path d="m2 6 10 7 10-7" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-gray-700">Email</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="bg-red-500 text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
+                10
+              </div>
+              <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+            </div>
+          </div>
+
+          {isOpen && (
+            <div className="mt-1 ml-9 bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+              <div 
+                className="px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100"
+                onClick={() => handleOptionSelect('outlook', 'Connect With Outlook App')}
+              >
+                <span className="text-sm text-gray-700">Connect With Outlook App</span>
+              </div>
+              <div 
+                className="px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                onClick={() => handleOptionSelect('email', 'Connect With Email App')}
+              >
+                <span className="text-sm text-gray-700">Connect With Email App</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
+      
 
       {/* Search bar */}
       <div className="p-4 ">

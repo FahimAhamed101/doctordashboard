@@ -59,8 +59,8 @@ export default function AppointmentDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-gray-50 px-6 py-4">
+      <div className="max-w-full ">
         {/* Header Tabs */}
         <div className="flex gap-3 p-3 mb-8 bg-white w-md rounded-lg">
           <button
@@ -86,10 +86,11 @@ export default function AppointmentDashboard() {
         </div>
 
         {/* Common Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="bg-white px-4 pt-4 shadow-md rounded-lg">
+             <div className="flex items-center justify-between mb-6 ">
           <div>
-            <h1 className="text-2xl font-semibold text-gray-900">Appointment</h1>
-            <p className="text-sm text-gray-600 mt-1">Total: 1200</p>
+            <h1 className="text-2xl font-semibold text-[#3D3D3D]">Appointment</h1>
+            <p className="text-sm text-[#737373] mt-1">Total: 1200</p>
           </div>
         <Link href="/appointment/addnew">
              <button className="flex items-center px-4 py-2 bg-[#2E8BC9] hover:bg-[#2E8BC9] text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -98,12 +99,8 @@ export default function AppointmentDashboard() {
           </button>
           </Link>
        
-        </div>
-
-        {activeTab === "doctor" ? (
-          <>
-            {/* Doctor View Filters */}
-            <div className="flex gap-4 mb-8">
+        </div>     {/* Doctor View Filters */}
+            <div className="flex gap-4 mb-8 pb-5">
               {/* Today Select */}
               <div className="relative w-full">
                 <select className="w-full px-3 py-2 text-sm shadow-sm rounded-md appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -178,13 +175,19 @@ export default function AppointmentDashboard() {
                 </div>
               </div>
             </div>
+        </div>
+     
+
+        {activeTab === "doctor" ? (
+          <>
+       
 
             {/* Doctor Appointment Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {doctorAppointments.map((appointment, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm"
+                  className="bg-white rounded-lg  p-6 shadow-sm"
                 >
                   {/* Doctor Info */}
                   <div className="flex items-center gap-3 mb-4">
@@ -242,29 +245,7 @@ export default function AppointmentDashboard() {
           </>
         ) : (
           <>
-            {/* Patient View Filters */}
-            <div className="grid grid-cols-3 bg-white gap-4 mb-6">
-              <select className="w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                <option value="">Select Patients Name</option>
-                <option value="mahmudur">Mahmudur Rahman</option>
-                <option value="john">John Doe</option>
-                <option value="jane">Jane Smith</option>
-              </select>
-
-              <select className="w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                <option value="">Date</option>
-                <option value="today">Today</option>
-                <option value="tomorrow">Tomorrow</option>
-                <option value="this-week">This Week</option>
-              </select>
-
-              <select className="w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                <option value="">ID</option>
-                <option value="p007rb">P007RB</option>
-                <option value="p008rc">P008RC</option>
-                <option value="p009rd">P009RD</option>
-              </select>
-            </div>
+         
 
             {/* Patient Appointment Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

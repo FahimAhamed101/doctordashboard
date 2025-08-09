@@ -704,6 +704,7 @@ export default function PatientInformationForm() {
                 <Plus className="w-4 h-4 mr-2 text-blue-500" />
                 Add Primary Card
               </button>
+              
             </div>
           </div>
     

@@ -3,7 +3,7 @@ import { FilterDropdown } from "./FilterDropdown";
 
 export function PatientsFilters() {
   return (
-    <div className="flex flex-wrap items-center gap-4 lg:gap-6">
+    <div className="flex flex-wrap items-center gap-4 lg:gap-6 px-3">
       <FilterDropdown 
         title="Gender" 
         options={["Male", "Female", "Other"]} 

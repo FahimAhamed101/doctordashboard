@@ -12,7 +12,6 @@ import {
   CameraOffIcon,
   Lock,
 } from "lucide-react";
-import Card from "@/components/UI/Card";
 import Input from "@/components/UI/Input";
 import Select from "@/components/UI/Select";
 
@@ -118,9 +117,9 @@ const PatientInfoPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center md:p-4">
-      <div className="w-full max-w-2xl">
-        <Card className="bg-white">
+    <div className="min-h-screen  flex 2 items-center justify-center md:p-4">
+      <div className="">
+        <div className="bg-white w-[3/4]  p-3 md:p-6 md:gap-6 gap-3">
           {/* Step Indicator */}
           <div className="flex items-center justify-between mb-8">
             <div className="flex flex-col justify-center items-center">
@@ -291,7 +290,7 @@ const PatientInfoPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="example@email.com"
                   required
                 />
@@ -307,7 +306,7 @@ const PatientInfoPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="+1 9999999999"
                   required
                 />
@@ -326,7 +325,7 @@ const PatientInfoPage = () => {
                   name="addressLine1"
                   value={formData.addressLine1}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="Street address"
                   required
                 />
@@ -343,7 +342,7 @@ const PatientInfoPage = () => {
                   name="addressLine2"
                   value={formData.addressLine2}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="Apartment, suite, unit, etc."
                 />
               </div>
@@ -359,7 +358,7 @@ const PatientInfoPage = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>
@@ -371,7 +370,7 @@ const PatientInfoPage = () => {
                     name="state"
                     value={formData.state}
                     onChange={handleInputChange}
-                    className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   >
                     <option value="">Select</option>
@@ -397,7 +396,7 @@ const PatientInfoPage = () => {
                     name="zip"
                     value={formData.zip}
                     onChange={handleInputChange}
-                    className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>
@@ -417,7 +416,7 @@ const PatientInfoPage = () => {
                   name="employer"
                   value={formData.employer}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="Company name"
                 />
               </div>
@@ -432,7 +431,7 @@ const PatientInfoPage = () => {
                   name="driversLicense"
                   value={formData.driversLicense}
                   onChange={handleInputChange}
-                  className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="License number"
                 />
               </div>
@@ -567,7 +566,7 @@ const PatientInfoPage = () => {
                     name="ssnLast4"
                     value={formData.ssnLast4}
                     onChange={handleInputChange}
-                    className="w-full bg-white border border-tertiary text-Text-secondary rounded-lg p-3 pl-10 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 pl-10 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     placeholder="4455"
                     maxLength={4}
                     pattern="[0-9]{4}"
@@ -602,7 +601,7 @@ const PatientInfoPage = () => {
               </Link>
             </div>
           </form>
-        </Card>
+        </div>
       </div>
     </div>
   );

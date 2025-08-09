@@ -118,10 +118,16 @@ const patients = [
     },
   ]
   return (
-    <div className="flex min-h-screen w-full flex-col bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
-      <div className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm md:p-6">
-        <PatientsHeader />
-        <PatientsFilters />
+    <div className="flex min-h-screen w-full  flex-col bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="pb-4 bg-white rounded-lg shadow-sm  mb-5 p-5">
+<PatientsHeader /> <PatientsFilters />
+      </div>
+      
+      
+      
+       <div className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm md:p-6">
+       
+       
         <PatientsTable patients={patients} />
       </div>
     </div>
