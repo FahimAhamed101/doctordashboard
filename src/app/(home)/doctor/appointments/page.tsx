@@ -232,17 +232,21 @@ const insuranceData = {
   return (
     <div className="space-y-6 p-4 md:p-6">
       {/* Top Section: Profile and Appointments */}
-      <div className="grid bg-white grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
-        {/* Profile Card */}
-        <div className="   p-6 lg:col-span-2">
-          <div className="w-24 h-24 md:w-20 md:h-20 rounded-full overflow-hidden bg-teal-500 flex-shrink-0">
-            <img
-              src="/placeholder.svg"
-              alt="Dr. Mahmudur Rahman"
-              className="w-full h-full object-cover"
-            />
-          </div>  <div className="flex pt-2 border-r flex-col md:flex-row items-center md:items-start gap-6">
-
+  <div className="w-full mx-auto p-3 bg-gray-50">
+      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="p-3">
+       <div className="grid bg-white grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
+            {/* Doctor Profile Section */}
+          <div className=" border-r   p-6 lg:col-span-2">
+        <div className="w-24   h-24 md:w-20 md:h-20 rounded-full overflow-hidden bg-teal-500 flex-shrink-0">
+              <img
+                src="/placeholder.svg"
+                alt="Dr. Mahmudur Rahman"
+                className="w-full h-full object-cover"
+              />
+            </div>  
+            <div  className="flex pt-2  flex-col md:flex-row items-center md:items-start gap-6">
+            
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-xl md:text-2xl text-[#3D3D3D] font-bold mb-4">Dr. Mahmudur Rahman</h1>
               <div className="space-y-3 text-sm text-gray-600">
@@ -260,11 +264,11 @@ const insuranceData = {
                 </div>
               </div>
               <button className="mt-6 shadow-md flex gap-2 items-center justify-center md:justify-start text-[#2E8BC9] hover:text-blue-800 hover:bg-blue-50 px-3 py-1.5 rounded-md transition-colors">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.38246 2.58997C9.87926 2.05173 10.1277 1.78261 10.3916 1.62563C11.0285 1.24685 11.8127 1.23507 12.4603 1.59455C12.7286 1.74354 12.9846 2.00509 13.4967 2.52818C14.0087 3.05127 14.2648 3.31282 14.4106 3.58696C14.7625 4.24842 14.751 5.04953 14.3802 5.70014C14.2265 5.96978 13.9631 6.22353 13.4362 6.73101L7.16706 12.7692C6.16858 13.7309 5.66933 14.2118 5.04537 14.4555C4.42141 14.6992 3.73546 14.6813 2.36357 14.6454L2.17692 14.6405C1.75927 14.6296 1.55044 14.6241 1.42906 14.4863C1.30766 14.3486 1.32424 14.1359 1.35738 13.7105L1.37538 13.4795C1.46867 12.282 1.51531 11.6833 1.74914 11.1451C1.98296 10.6069 2.38629 10.17 3.19295 9.29601L9.38246 2.58997Z" stroke="#2E8BC9" stroke-width="1.5" stroke-linejoin="round" />
-                  <path d="M8.66667 2.66699L13.3333 7.33366" stroke="#2E8BC9" stroke-width="1.5" stroke-linejoin="round" />
-                  <path d="M9.33333 14.667H14.6667" stroke="#2E8BC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.38246 2.58997C9.87926 2.05173 10.1277 1.78261 10.3916 1.62563C11.0285 1.24685 11.8127 1.23507 12.4603 1.59455C12.7286 1.74354 12.9846 2.00509 13.4967 2.52818C14.0087 3.05127 14.2648 3.31282 14.4106 3.58696C14.7625 4.24842 14.751 5.04953 14.3802 5.70014C14.2265 5.96978 13.9631 6.22353 13.4362 6.73101L7.16706 12.7692C6.16858 13.7309 5.66933 14.2118 5.04537 14.4555C4.42141 14.6992 3.73546 14.6813 2.36357 14.6454L2.17692 14.6405C1.75927 14.6296 1.55044 14.6241 1.42906 14.4863C1.30766 14.3486 1.32424 14.1359 1.35738 13.7105L1.37538 13.4795C1.46867 12.282 1.51531 11.6833 1.74914 11.1451C1.98296 10.6069 2.38629 10.17 3.19295 9.29601L9.38246 2.58997Z" stroke="#2E8BC9" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M8.66667 2.66699L13.3333 7.33366" stroke="#2E8BC9" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M9.33333 14.667H14.6667" stroke="#2E8BC9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
                 Edit
               </button>
@@ -275,18 +279,18 @@ const insuranceData = {
         {/* Appointments Section */}
         <div className="bg-white rounded-lg  p-6">
           <h2 className="text-lg font-semibold mb-6 text-gray-800">Appointments</h2>
-
+          
           <div className="grid grid-cols-2 gap-4">
             {/* Today Appointments */}
             <div className="text-start shadow-sm  p-2 rounded-md">
               <div className="mb-3">
-                <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect y="0.5" width="48" height="48" rx="6" fill="#F0F5FE" />
-                  <path d="M28 14.5V18.5M20 14.5V18.5" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25 16.5H23C19.2288 16.5 17.3431 16.5 16.1716 17.6716C15 18.8431 15 20.7288 15 24.5V26.5C15 30.2712 15 32.1569 16.1716 33.3284C17.3431 34.5 19.2288 34.5 23 34.5H25C28.7712 34.5 30.6569 34.5 31.8284 33.3284C33 32.1569 33 30.2712 33 26.5V24.5C33 20.7288 33 18.8431 31.8284 17.6716C30.6569 16.5 28.7712 16.5 25 16.5Z" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M15 22.5H33" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M23 26.5H28M20 26.5H20.009M25 30.5H20M28 30.5H27.991" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+               <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="48" height="48" rx="6" fill="#F0F5FE"/>
+<path d="M28 14.5V18.5M20 14.5V18.5" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 16.5H23C19.2288 16.5 17.3431 16.5 16.1716 17.6716C15 18.8431 15 20.7288 15 24.5V26.5C15 30.2712 15 32.1569 16.1716 33.3284C17.3431 34.5 19.2288 34.5 23 34.5H25C28.7712 34.5 30.6569 34.5 31.8284 33.3284C33 32.1569 33 30.2712 33 26.5V24.5C33 20.7288 33 18.8431 31.8284 17.6716C30.6569 16.5 28.7712 16.5 25 16.5Z" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 22.5H33" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 26.5H28M20 26.5H20.009M25 30.5H20M28 30.5H27.991" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
               </div>
               <h3 className="text-sm font-medium text-gray-600 mb-2">Today</h3>
@@ -294,15 +298,15 @@ const insuranceData = {
             </div>
 
             {/* Total Appointments */}
-            <div className="text-start shadow-sm  p-2 rounded-md">
+        <div className="text-start shadow-sm  p-2 rounded-md">
               <div className="mb-3">
-                <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect y="0.5" width="48" height="48" rx="6" fill="#F0F5FE" />
-                  <path d="M28 14.5V18.5M20 14.5V18.5" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25 16.5H23C19.2288 16.5 17.3431 16.5 16.1716 17.6716C15 18.8431 15 20.7288 15 24.5V26.5C15 30.2712 15 32.1569 16.1716 33.3284C17.3431 34.5 19.2288 34.5 23 34.5H25C28.7712 34.5 30.6569 34.5 31.8284 33.3284C33 32.1569 33 30.2712 33 26.5V24.5C33 20.7288 33 18.8431 31.8284 17.6716C30.6569 16.5 28.7712 16.5 25 16.5Z" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M15 22.5H33" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M23 26.5H28M20 26.5H20.009M25 30.5H20M28 30.5H27.991" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="48" height="48" rx="6" fill="#F0F5FE"/>
+<path d="M28 14.5V18.5M20 14.5V18.5" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 16.5H23C19.2288 16.5 17.3431 16.5 16.1716 17.6716C15 18.8431 15 20.7288 15 24.5V26.5C15 30.2712 15 32.1569 16.1716 33.3284C17.3431 34.5 19.2288 34.5 23 34.5H25C28.7712 34.5 30.6569 34.5 31.8284 33.3284C33 32.1569 33 30.2712 33 26.5V24.5C33 20.7288 33 18.8431 31.8284 17.6716C30.6569 16.5 28.7712 16.5 25 16.5Z" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 22.5H33" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 26.5H28M20 26.5H20.009M25 30.5H20M28 30.5H27.991" stroke="#2E8BC9" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
               </div>
               <h3 className="text-sm font-medium text-gray-600 mb-2">Total</h3>
@@ -315,7 +319,10 @@ const insuranceData = {
             </div>
           </div>
         </div>
+          </div>
+        </div>
       </div>
+    </div>
 
       {/* Bottom Section: Tabs and Availability Management */}
       <div className="bg-white rounded-lg shadow-sm p-6">
