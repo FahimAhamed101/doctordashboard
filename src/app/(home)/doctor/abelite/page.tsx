@@ -155,7 +155,7 @@ export default function DoctorProfileForm() {
       </div>
 
        <div className="space-y-2">
-        <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="location" className="w-1/2 text-sm font-medium text-gray-700">
           Office Location
         </label>
         <textarea
@@ -179,23 +179,9 @@ export default function DoctorProfileForm() {
       </div>
 
       {/* Map */}
-      <div className="space-y-2">
-        <div className="bg-white rounded-lg shadow-sm  overflow-hidden">
-          <div className="p-0">
-            <div className="w-full h-32 bg-green-100 rounded-lg overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-200 to-green-300 opacity-50"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <MapPin className="w-8 h-8 text-red-500" />
-              </div>
-              {/* Simulated map elements */}
-              <div className="absolute top-2 left-2 w-2 h-2 bg-gray-400 rounded-full"></div>
-              <div className="absolute top-4 right-3 w-1 h-1 bg-gray-400 rounded-full"></div>
-              <div className="absolute bottom-3 left-4 w-1 h-1 bg-gray-400 rounded-full"></div>
-              <div className="absolute bottom-2 right-2 w-2 h-2 bg-gray-400 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-        <button className="w-full flex items-center justify-center text-blue-600 text-sm hover:text-blue-800 px-3 py-1.5 rounded-md hover:bg-gray-50">
+      <div className="space-y-2 pt-5">
+     
+        <button className="w-full flex shadow-md items-center justify-center text-blue-600 text-sm hover:text-blue-800 px-3 py-1.5 rounded-md hover:bg-gray-50">
           <Plus className="w-4 h-4 mr-2" />
           Add Another Location
         </button>

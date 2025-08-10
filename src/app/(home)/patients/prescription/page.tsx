@@ -92,9 +92,9 @@ export default function PatientDashboard() {
       case "Upcoming":
         return "bg-orange-100 text-orange-600";
       case "Next Follow Up In 7 Days":
-        return "bg-blue-100 text-blue-600";
+        return "bg-[#F0F5FE] text-[#2B4DCA]";
       case "Complete":
-        return "bg-green-100 text-green-600";
+        return "bg-[#EEFEE7] text-[#237B10]";
       case "Canceled":
         return "bg-red-100 text-red-600";
       default:

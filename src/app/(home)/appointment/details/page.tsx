@@ -79,10 +79,10 @@ const appointmentsData = [
 export default function Component() {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className=" space-y-6">
         {/* Header Section */}
 
-    <div className="w-full mx-auto p-3 bg-gray-50">
+    <div className="w-full  p-2 bg-gray-50">
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
         <div className="p-3">
        <div className="grid bg-white grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
@@ -172,11 +172,7 @@ export default function Component() {
           </div>
         </div>
       </div>
-    </div>
-
-
-        {/* Appointments Table */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+  <div className="bg-white rounded-lg shadow-sm overflow-hidden mt-5">
           <div className="p-6">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-lg font-semibold text-gray-900">Appointment</h3>
@@ -271,8 +267,8 @@ export default function Component() {
                         <span
                           className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                             appointment.status === "In Care"
-                              ? "bg-green-100 text-green-800"
-                              : "bg-blue-100 text-blue-800"
+                              ? "bg-[#EEFEE7] text-[#237B10]"
+            : "bg-[#F0F5FE] text-[#2B4DCA]"
                           }`}
                         >
                           {appointment.status}
@@ -294,7 +290,11 @@ export default function Component() {
               </table>
             </div>
           </div>
-        </div>
+        </div>  </div>
+
+
+        {/* Appointments Table */}
+        
       </div>
     </div>
   )

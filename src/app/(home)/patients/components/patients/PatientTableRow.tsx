@@ -25,7 +25,7 @@ export function PatientTableRow({ patient }: PatientTableRowProps) {
           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-sm font-semibold text-[#2E8BC9]">
             {patient.initial}
           </div>
-          {patient.name}
+    <span className="min-w-0 truncate">{patient.name}</span>
         </div>
       </td>
       <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">

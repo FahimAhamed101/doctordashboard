@@ -633,7 +633,7 @@ const MedicalInformationPage = () => {
                       type="checkbox"
                       checked={formData.conditions.includes(condition)}
                       onChange={() => handleConditionChange(condition)}
-                      className="w-4 h-4 text-blue-500 rounded border-gray-300 focus:ring-blue-500"
+                      className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                     />
                     <span className="ml-3 text-gray-700">{condition}</span>
                   </label>
@@ -714,7 +714,7 @@ const MedicalInformationPage = () => {
                       type="checkbox"
                       checked={formData.lifestyleFactors.includes(factor)}
                       onChange={() => handleLifestyleChange(factor)}
-                      className="w-4 h-4 text-blue-500 rounded border-gray-300 focus:ring-blue-500"
+                      className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                     />
                     <span className="ml-3 text-gray-700">{factor}</span>
                   </label>

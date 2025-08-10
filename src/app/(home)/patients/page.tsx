@@ -11,7 +11,7 @@ const patients = [
     {
       id: "P6Q7R8",
       initial: "R",
-      name: "Rami Rahm...",
+      name: "Rami Rahmim ahmed",
       contact: { email: "sarah_illustrates@gmail.com", phone: "(555) 123-4567" },
       gender: "Male",
       lastVisit: "04-30-2026",
@@ -80,42 +80,9 @@ const patients = [
       lastVisit: "11-22-2025",
       status: "Recovered",
     },
-    {
-      id: "Y5Z6A7",
-      initial: "A",
-      name: "Ayaan Rah...",
-      contact: { email: "sarah_illustrates@gmail.com", phone: "(555) 123-4567" },
-      gender: "Female",
-      lastVisit: "12-05-2026",
-      status: "In Care",
-    },
-    {
-      id: "E1F2G3",
-      initial: "H",
-      name: "Hadi Rahma...",
-      contact: { email: "sarah_illustrates@gmail.com", phone: "(555) 123-4567" },
-      gender: "Male",
-      lastVisit: "06-30-2026",
-      status: "In Care",
-    },
-    {
-      id: "A1B2C3",
-      initial: "S",
-      name: "Sofia Elham...",
-      contact: { email: "sarah_illustrates@gmail.com", phone: "(555) 123-4567" },
-      gender: "Female",
-      lastVisit: "05-25-2026",
-      status: "In Care",
-    },
-    {
-      id: "H4I5J6",
-      initial: "L",
-      name: "Lina Rahma...",
-      contact: { email: "sarah_illustrates@gmail.com", phone: "(555) 123-4567" },
-      gender: "Female",
-      lastVisit: "03-12-2025",
-      status: "In Care",
-    },
+ 
+  
+  
   ]
   return (
     <div className="flex min-h-screen w-full  flex-col bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">

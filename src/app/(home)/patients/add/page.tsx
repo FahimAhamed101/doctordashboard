@@ -290,7 +290,7 @@ const PatientInfoPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="example@email.com"
                   required
                 />
@@ -306,7 +306,7 @@ const PatientInfoPage = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3  focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="+1 9999999999"
                   required
                 />
@@ -325,7 +325,7 @@ const PatientInfoPage = () => {
                   name="addressLine1"
                   value={formData.addressLine1}
                   onChange={handleInputChange}
-                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3  focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="Street address"
                   required
                 />
@@ -342,7 +342,7 @@ const PatientInfoPage = () => {
                   name="addressLine2"
                   value={formData.addressLine2}
                   onChange={handleInputChange}
-                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3  focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                   placeholder="Apartment, suite, unit, etc."
                 />
               </div>
@@ -358,7 +358,7 @@ const PatientInfoPage = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>
@@ -370,7 +370,7 @@ const PatientInfoPage = () => {
                     name="state"
                     value={formData.state}
                     onChange={handleInputChange}
-                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3  focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   >
                     <option value="">Select</option>
@@ -396,7 +396,7 @@ const PatientInfoPage = () => {
                     name="zip"
                     value={formData.zip}
                     onChange={handleInputChange}
-                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3 font-bold focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full bg-white shadow-md text-Text-secondary rounded-lg p-3  focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                     required
                   />
                 </div>

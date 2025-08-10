@@ -40,7 +40,7 @@ const renderCustomizedLabel = ({
 
 export default function AppointmentStatusChart() {
   return (
-    <div className="bg-white rounded-lg  shadow-sm w-full max-w-md mx-auto">
+    <div className="bg-white rounded-lg  shadow-sm w-full max-w-md ">
       <div className="p-4 border-b border-[#DCDCDC]">
         <h2 className="text-lg font-semibold text-center">All Appointment Status</h2>
       </div>

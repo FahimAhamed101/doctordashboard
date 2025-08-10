@@ -8,7 +8,7 @@ interface PatientsTableProps {
 export function PatientsTable({ patients }: PatientsTableProps) {
   return (
     <div className="overflow-x-auto">
-      <div className="min-w-full overflow-hidden rounded-lg">
+      <div className="inline-block min-w-full align-middle">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-[#EDF4FA]">
             <tr>
