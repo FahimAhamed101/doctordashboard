@@ -2,9 +2,9 @@ import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
 const appointmentStatusData = [
-  { name: 'New', value: 40 },
-  { name: 'Completed', value: 75 },
-  { name: 'Canceled', value: 10 }
+  { name: 'New', value: 60 },
+  { name: 'Completed', value: 32 },
+  { name: 'Canceled', value: 8 }
 ];
 
 const PIE_COLORS = ['#2E8BC9', '#D6EBFD', '#1A588A']; // Blue, Green, Red

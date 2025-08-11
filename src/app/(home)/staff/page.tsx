@@ -90,7 +90,7 @@ const staffData = [
 
 export default function StaffTable() {
   return (
-    <div className=" p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-100 min-h-screen">
+    <div className=" p-4 sm:p-6 md:p-8 lg:p-10 bg-[#F6F9FC] min-h-screen">
         <div className="p-6 bg-white shadow-md rounded-2xl mb-4 flex flex-row items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-[#3D3D3D]">Staff</h2>

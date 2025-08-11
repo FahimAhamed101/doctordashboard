@@ -156,14 +156,14 @@ export default function CheckInForm() {
               {healthChanges === "yes" && (
                 <div className="mt-3">
                 
-                  <input
-                    type="text"
-                    id="changes-details"
-                    placeholder=" what?"
-                    value={changesDetails}
-                    onChange={(e) => setChangesDetails(e.target.value)}
-                    className="mt-1 block w-50 h-15 border  rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                  />
+                <textarea
+ 
+  id="changes-details"
+  placeholder=" what?"
+  value={changesDetails}
+  onChange={(e) => setChangesDetails(e.target.value)}
+  className="mt-1 p-1 block w-50 h-15 border rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm placeholder:mb-2"
+/>
                 </div>
               )}
             </div>

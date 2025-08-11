@@ -584,7 +584,7 @@ const PatientInfoPage = () => {
                 <button
                   type="button"
                   onClick={handlePrevious}
-                  className="bg-white cursor-pointer text-gray-600 px-6 py-3 rounded-lg border border-gray-300 font-medium hover:bg-gray-50 transition-colors"
+                  className="bg-white cursor-pointer text-gray-600 px-6 py-3 rounded-lg shadow-md font-medium hover:bg-gray-50 transition-colors"
                 >
                   Previous
                 </button>

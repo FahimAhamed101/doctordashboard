@@ -58,7 +58,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
     <div className="flex flex-col gap-2">
       <span className="text-sm text-gray-500">Status</span>
       <div className="flex flex-1/3">
-        <span className={`flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(appointment.status)}`}>
+        <span className={`flex items-center px-2.5 py-1.5 rounded-full text-xs font-medium ${getStatusClasses(appointment.status)}`}>
           {getStatusIcon(appointment.status)}
           {appointment.status}
         </span>

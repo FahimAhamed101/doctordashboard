@@ -74,9 +74,9 @@ export default function DashboardLayout({
 
               <div className="flex items-center justify-between w-[560px]">
                 {/* Search Bar */}
-                <div className="flex-1 bg-white max-w-xl mx-6 hidden md:block">
-                  <div className="relative">
-                    <div className="absolute inset-y-0  left-0 pl-3 flex items-center pointer-events-none">
+                <div className="flex-1 bg-white max-w-xl rounded-lg mx-6 hidden md:block">
+                  <div className="relative rounded-lg">
+                    <div className="absolute inset-y-0 rounded-lg  left-0 pl-3 flex items-center pointer-events-none">
                       <svg
                         width="24"
                         height="24"

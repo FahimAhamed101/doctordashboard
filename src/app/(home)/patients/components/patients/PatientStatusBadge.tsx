@@ -10,7 +10,7 @@ export function PatientStatusBadge({ status }: PatientStatusBadgeProps) {
   };
 
   return (
-    <span className={`inline-flex rounded-full px-2 py-1 text-xs font-semibold leading-5 ${statusClasses[status]}`}>
+    <span className={`inline-flex rounded-full px-4 py-1 text-xs font-semibold leading-5 ${statusClasses[status]}`}>
       {status}
     </span>
   );

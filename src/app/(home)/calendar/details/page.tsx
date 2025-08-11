@@ -87,7 +87,7 @@ export default function Component() {
         <div className="p-3">
        <div className="grid bg-white grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl">
             {/* Doctor Profile Section */}
-          <div className=" border-r   p-6 lg:col-span-2">
+          <div className=" border-r  border-[#DCDCDC]  p-6 lg:col-span-2">
         <div className="w-24   h-24 md:w-20 md:h-20 rounded-full overflow-hidden bg-teal-500 flex-shrink-0">
               <img
                 src="/placeholder.svg"
@@ -98,7 +98,7 @@ export default function Component() {
             <div  className="flex pt-2  flex-col md:flex-row items-center md:items-start gap-6">
             
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-xl md:text-2xl text-[#3D3D3D] font-bold mb-4">Dr. Mahmudur Rahman</h1>
+              <h1 className="text-xl md:text-2xl text-[#3D3D3D] font-semibold mb-4">Dr. Mahmudur Rahman</h1>
               <div className="space-y-3 text-sm text-gray-600">
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Stethoscope className="w-4 h-4 text-gray-500" />
@@ -128,9 +128,9 @@ export default function Component() {
 
         {/* Appointments Section */}
         <div className="bg-white rounded-lg  p-6">
-          <h2 className="text-lg font-semibold mb-6 text-gray-800">Appointments</h2>
+          <h2 className="text-lg font-semibold mb-6 text-[#3D3D3D]">Appointments</h2>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-6">
             {/* Today Appointments */}
             <div className="text-start shadow-sm  p-2 rounded-md">
               <div className="mb-3">
@@ -265,7 +265,7 @@ export default function Component() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span
-                          className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          className={`px-4 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
                             appointment.status === "In Care"
                               ? "bg-[#EEFEE7] text-[#237B10]"
             : "bg-[#F0F5FE] text-[#2B4DCA]"
@@ -277,10 +277,18 @@ export default function Component() {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         <div className="flex items-center space-x-2">
                           <button className="p-1 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <Eye className="h-4 w-4" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="#3D3D3D" stroke-width="1.5"/>
+<path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="#3D3D3D" stroke-width="1.5"/>
+</svg>
+
                           </button>
                           <button className="p-1 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <Edit className="h-4 w-4" />
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.4249 4.60509L17.4149 3.6151C18.2351 2.79497 19.5648 2.79497 20.3849 3.6151C21.205 4.43524 21.205 5.76493 20.3849 6.58507L19.3949 7.57506M16.4249 4.60509L9.76558 11.2644C9.25807 11.772 8.89804 12.4078 8.72397 13.1041L8 16L10.8959 15.276C11.5922 15.102 12.228 14.7419 12.7356 14.2344L19.3949 7.57506M16.4249 4.60509L19.3949 7.57506" stroke="#2B4DCA" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M18.9999 13.5C18.9999 16.7875 18.9999 18.4312 18.092 19.5376C17.9258 19.7401 17.7401 19.9258 17.5375 20.092C16.4312 21 14.7874 21 11.4999 21H11C7.22876 21 5.34316 21 4.17159 19.8284C3.00003 18.6569 3 16.7712 3 13V12.5C3 9.21252 3 7.56879 3.90794 6.46244C4.07417 6.2599 4.2599 6.07417 4.46244 5.90794C5.56879 5 7.21252 5 10.5 5" stroke="#2B4DCA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                           </button>
                         </div>
                       </td>

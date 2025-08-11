@@ -14,7 +14,7 @@ export function ActivityList({ activities }: ActivityListProps) {
     <div className="bg-white rounded-lg shadow-sm">
       <div className="flex items-center justify-between p-3">
         <h2 className="text-sm">Today's Activity</h2>
-        <button className="text-sm text-blue-600 hover:underline">View all</button>
+        <button className="text-sm text-[#2B4DCA] hover:underline">View all</button>
       </div>
       <div className="p-3 space-y-2">
         {activities.map((activity, index) => (
@@ -29,7 +29,7 @@ export function ActivityList({ activities }: ActivityListProps) {
               </p>
             </div>
             {activity.status === "check-in" ? (
-              <button className="px-3 py-1 text-sm border shadow-md border-yellow-200 bg-[#FBF7EB] text-yellow-800 rounded-md hover:bg-yellow-200">
+              <button className="px-3 py-1 text-sm shadow-md  bg-[#FBF7EB] text-yellow-800 rounded-md hover:bg-yellow-200">
                 Check In
               </button>
             ) : (

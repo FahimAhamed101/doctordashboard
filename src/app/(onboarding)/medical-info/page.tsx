@@ -727,7 +727,7 @@ const MedicalInformationPage = () => {
               <Link href="/patient-information">
                 <button
                   type="button"
-                  className="flex cursor-pointer bg-white items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex cursor-pointer bg-white items-center px-6 py-3 shadow-md text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Previous
                 </button>

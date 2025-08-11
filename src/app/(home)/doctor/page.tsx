@@ -26,7 +26,7 @@ export default function DoctorsPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gray-100 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-[#F6F9FC] sm:p-6 md:p-8">
       <DoctorsHeader 
         title="Doctors" 
         description="Oversee all the doctors." 

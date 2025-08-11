@@ -45,10 +45,7 @@ export function PatientTableRow({ patient }: PatientTableRowProps) {
             <Eye className="h-4 w-4" />
             <span className="sr-only">View</span>
           </Link>
-          <Link href="/patients/edit" className="rounded-md p-1 text-gray-400 hover:text-gray-500">
-            <Pencil className="h-4 w-4" />
-            <span className="sr-only">Edit</span>
-          </Link>
+          
         </div>
       </td>
     </tr>

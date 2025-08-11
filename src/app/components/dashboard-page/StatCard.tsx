@@ -13,8 +13,8 @@ export function StatCard({ title, value, percentage, isPositive, icon }: StatCar
   return (
     <div className="bg-white rounded-lg p-3 shadow-md">
       <div className="mb-2">{icon}</div>
-      <div>
-        <h3 className="text-sm font-medium text-gray-600">{title}</h3>
+      <div className="pt-2">
+        <h3 className="text-sm font-medium text-[#7C7C7C]">{title}</h3>
         <div className="mt-2 flex w-full justify-between">
           <div className="text-2xl font-bold">{value}</div>
           <div
