@@ -49,7 +49,7 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
           style={{ boxShadow: "0 -6px 15px rgba(0, 0, 0, 0.1)" }}
           className="bg-white p-4 flex items-center justify-center gap-4"
         >
-          <button onClick={() => setShowDialogBox(false)} className="hover:opacity-90 border-[1px] text-[#2E8BC9] border-[#2E8BC9] rounded-md w-full py-2 text-center cursor-pointer text-[18px] font-[500]">
+          <button onClick={() => setShowDialogBox(false)} className="hover:opacity-90 shadow-md text-[#2E8BC9]  rounded-md w-full py-2 text-center cursor-pointer text-[18px] font-[500]">
             Close
           </button>
           <button className="hover:opacity-90 bg-[#2E8BC9] rounded-md w-full py-2 text-center flex items-center justify-center gap-2 text-white cursor-pointer text-[18px] font-[500]">

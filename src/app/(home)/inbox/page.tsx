@@ -170,41 +170,27 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
         <div className="relative">
           <div 
             className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
+            
           >
-            <div className="flex items-center gap-3">
+            <Link href="/inbox/email">  <div className="flex items-center gap-3">
+             
+              
+            
               <div className="w-6 h-6 flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="2" y="4" width="20" height="16" rx="2" fill="#FCD34D" stroke="none"/>
                   <path d="m2 6 10 7 10-7" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <span className="text-gray-700">Email</span>
+            
+                <span className="text-gray-700">Email</span>
+          
+            
             </div>
-            <div className="flex items-center gap-2">
-              <div className="bg-red-500 text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
-                10
-              </div>
-              <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                </Link>
             </div>
-          </div>
 
-          {isOpen && (
-            <div className="mt-1 ml-9 bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-              <div 
-                className="px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100"
-                onClick={() => handleOptionSelect('outlook', 'Connect With Outlook App')}
-              >
-                <span className="text-sm text-gray-700">Connect With Outlook App</span>
-              </div>
-              <div 
-                className="px-4 py-2 hover:bg-gray-50 cursor-pointer"
-                onClick={() => handleOptionSelect('email', 'Connect With Email App')}
-              >
-                <span className="text-sm text-gray-700">Connect With Email App</span>
-              </div>
-            </div>
-          )}
+         
         </div>
       </div>
       

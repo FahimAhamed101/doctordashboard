@@ -1,6 +1,6 @@
 export default function StaffInfoForm() {
   return (
-    <div className="flex justify-center   bg-gray-100 p-4">
+    <div className="flex justify-center    p-4">
       <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-2xl font-bold text-gray-800">Staff Info</h2>
@@ -59,7 +59,7 @@ export default function StaffInfoForm() {
             
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full px-4 py-2 bg-[#2E8BC9] text-white font-medium rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Add Staff
             </button>

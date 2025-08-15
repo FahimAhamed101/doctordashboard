@@ -14,7 +14,8 @@ export default function BarChartComponent() {
                                 </p>
                             </div>
                             <div className="relative inline-block gap-8 focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:border-none rounded-lg">
-                                <select className="text-[16px] border rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
+                                <select className="text-[16px] border border-[#DCDCDC] rounded-lg p-[12px] text-gray-700 appearance-none w-[134px] outline-none">
+                             
                                     <option>Yearly</option>
                                     <option>Monthly</option>
                                 </select>
@@ -25,11 +26,14 @@ export default function BarChartComponent() {
                 <ResponsiveContainer width="100%" height="100%" className="p-0" style={{padding: "0 24px 0 0"}}>
                     <BarChart data={barData}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="year" />
-                        <YAxis />
+                        <XAxis   axisLine={false}  // Hide X-axis line
+      tickLine={false} dataKey="year" />
+                        <YAxis   axisLine={false}  // Hide X-axis line
+      tickLine={false} />
+                        
                         <Tooltip />
                         <Legend
-                            verticalAlign="top"
+                            verticalAlign="bottom"
                             align="center"
                             iconType="circle"
                             wrapperStyle={{ paddingTop: 10 }}
@@ -37,6 +41,7 @@ export default function BarChartComponent() {
                         <Bar dataKey="newUser" name="New User" fill="#3498db" radius={[4, 4, 0, 0]} barSize={25} />
                         <Bar dataKey="oldUser" name="Old User" fill="#195A8A" radius={[4, 4, 0, 0]} barSize={25} />
                     </BarChart>
+
                 </ResponsiveContainer>
             </div>
         </div>

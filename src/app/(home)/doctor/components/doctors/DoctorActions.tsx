@@ -33,11 +33,14 @@ export const DoctorActions = () => (
     </Link>
 
     {/* Edit Button */}
+
     <button 
       className="p-2 rounded-md text-blue-600 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       aria-label="Edit"
     >
-      <div className="h-5 w-5 flex items-center justify-center">
+        <Link 
+      href="doctor/abelite">
+ <div className="h-5 w-5 flex items-center justify-center">
         <svg 
           width="20" 
           height="20" 
@@ -61,6 +64,9 @@ export const DoctorActions = () => (
           />
         </svg>
       </div>
+
+      </Link>
+     
     </button>
   </div>
 );

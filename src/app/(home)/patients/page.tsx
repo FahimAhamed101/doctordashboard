@@ -7,7 +7,7 @@ import { PatientsTable } from "./components/patients/PatientsTable";
 import { Patient } from "./types/patient";
 
 export default function PatientsDashboard() {
-const patients = [
+  const patients = [
     {
       id: "P6Q7R8",
       initial: "R",
@@ -80,22 +80,21 @@ const patients = [
       lastVisit: "11-22-2025",
       status: "Recovered",
     },
- 
-  
-  
-  ]
+  ];
+
   return (
-    <div className="flex min-h-screen w-full  flex-col bg-[#F6F9FC] p-4 sm:p-6 md:p-8 lg:p-10">
-      <div className="pb-4 bg-white rounded-lg shadow-sm  mb-5 p-5">
-<PatientsHeader /> <PatientsFilters />
+    <div className="flex h-full w-full flex-col bg-[#F6F9FC] p-4 sm:p-6 md:p-8 lg:p-10">
+      {/* Header Section - Fixed height */}
+      <div className="flex-shrink-0 bg-white rounded-lg shadow-sm mb-5 p-5">
+        <PatientsHeader />
+        <PatientsFilters />
       </div>
-      
-      
-      
-       <div className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm md:p-6">
-       
-       
-        <PatientsTable patients={patients} />
+
+      {/* Table Section - Takes remaining space with scroll */}
+      <div className="flex-1 min-h-0 rounded-lg bg-white shadow-sm">
+        <div className="h-full p-4 md:p-6 overflow-y-auto">
+          <PatientsTable patients={patients} />
+        </div>
       </div>
     </div>
   );

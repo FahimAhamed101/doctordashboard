@@ -136,7 +136,7 @@ export default function DoctorAppointmentScheduler() {
       {/* Sidebar */}
       <div className="w-80 bg-white border-r border-gray-200 flex flex-col">
         <div className="p-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Doctor</h2>
+          <h2 className="text-lg font-semibold text-[#7C7C7C] mb-3">Doctor</h2>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <input
@@ -184,9 +184,9 @@ export default function DoctorAppointmentScheduler() {
         {/* Header */}
         <div className="bg-white border-b border-gray-200 p-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-gray-900">Doctor Appointment Schedule</h1>
+            <h1 className="text-xl font-semibold text-[#3D3D3D]">Doctor Appointment Schedule</h1>
             <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-600 font-medium">
+              <div className="text-sm text-[#3D3D3D] font-medium">
                 {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
               </div>
               <div className="flex items-center space-x-1">
@@ -213,7 +213,7 @@ export default function DoctorAppointmentScheduler() {
             {/* Calendar Header */}
             <div className="grid grid-cols-7 border-b border-gray-200">
               {weekDays.map((day) => (
-                <div key={day} className="p-3 text-center text-sm font-medium text-gray-700 bg-gray-50 border-r border-gray-200 last:border-r-0">
+                <div key={day} className="p-3 text-center text-sm font-medium text-[#3D3D3D] bg-gray-50 border-r border-gray-200 last:border-r-0">
                   {day}
                 </div>
               ))}

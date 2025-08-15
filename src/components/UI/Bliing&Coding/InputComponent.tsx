@@ -1,4 +1,4 @@
-import { InputComponentProps } from '@/app/billing_and_coding/data';
+import { InputComponentProps } from '@/app/(home)/billing_and_coding/data';
 import React, { useState } from 'react';
 import ArrowDownIcon from '../ArrowDownIcon';
 import Image from 'next/image';

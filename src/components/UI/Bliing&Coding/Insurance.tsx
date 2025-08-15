@@ -6,12 +6,13 @@ export default function Insurance() {
     return (
         <div className='mt-8'>
             <form method="post">
-                <h3 className='text-[#7C7C7C] font-[500] text-[16px]'>Insurance Information (Boxes 9-13)</h3>
-                <div className='mt-4 flex flex-col gap-4'>
+                <h3 className='text-[#7C7C7C] font-[500] text-[16px] mb-6'>Insurance Information (Boxes 9-13)</h3>
+                
+                <div className='mb-8'>
                     <div>
-                        <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-9">Box 9: Other Insured's Name</label>
+                        <label className="font-[500] text-[18px] text-[#3D3D3D] mb-2" htmlFor="box-9">Box 9: Other Insured's Name</label>
                     </div>
-                    <div className='flex items-center justify-center gap-2 flex-wrap md:flex-nowrap'>
+                    <div className='flex items-center justify-center gap-4 flex-wrap md:flex-nowrap mt-4'>
                         {
                             ["First Name", "Middle", "Last"].map((nameData, index) => (
                                 <InputComponent
@@ -30,13 +31,13 @@ export default function Insurance() {
                             ))
                         }
                     </div>
-
                 </div>
-                <div className='mt-4'>
+
+                <div className='mb-8'>
                     <InputComponent
                         inputComponentProps={{
                             label: "Box 9a: Other Insured's Policy or Group Number",
-                            inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                            inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                             labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                             required: false,
                             errorMessage: null,
@@ -46,11 +47,12 @@ export default function Insurance() {
                         }}
                     />
                 </div>
-                <div className='mt-4'>
+
+                <div className='mb-8'>
                     <InputComponent
                         inputComponentProps={{
                             label: "Box 9d: Insurance Plan Name or Program Name",
-                            inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                            inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                             labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                             required: false,
                             errorMessage: null,
@@ -60,11 +62,12 @@ export default function Insurance() {
                         }}
                     />
                 </div>
-                <div className='mt-4'>
+
+                <div className='mb-8'>
                     <InputComponent
                         inputComponentProps={{
                             label: "Box 11: Insured's Policy Group or FECA Number",
-                            inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                            inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                             labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                             required: false,
                             errorMessage: null,
@@ -74,12 +77,13 @@ export default function Insurance() {
                         }}
                     />
                 </div>
-                <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
+
+                <div className='flex items-center justify-center gap-8 flex-wrap md:flex-nowrap mb-8'>
                     <div className='w-full'>
                         <InputComponent
                             inputComponentProps={{
                                 label: "Box 11a: Insured's Date of Birth",
-                                inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                                inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                                 labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                                 required: false,
                                 errorMessage: null,
@@ -90,7 +94,7 @@ export default function Insurance() {
                         />
                     </div>
                     <div className='w-full'>
-                        <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11a-2">Box 11a: Insured's Sex</label>
+                        <label className="font-[500] text-[18px] text-[#3D3D3D] mb-2" htmlFor="box-11a-2">Box 11a: Insured's Sex</label>
                         <div className='flex gap-8 mt-4'>
                             <div className='flex items-center'>
                                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="male">Male</label>
@@ -107,11 +111,12 @@ export default function Insurance() {
                         </div>
                     </div>
                 </div>
-                <div className='mt-4'>
+
+                <div className='mb-8'>
                     <InputComponent
                         inputComponentProps={{
                             label: "Box 11b: Other Claim ID (Designated by NUCC)",
-                            inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                            inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                             labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                             required: false,
                             errorMessage: null,
@@ -121,11 +126,12 @@ export default function Insurance() {
                         }}
                     />
                 </div>
-                <div className='mt-4'>
+
+                <div className='mb-8'>
                     <InputComponent
                         inputComponentProps={{
                             label: "Box 11c: Insurance Plan Name or Program Name *",
-                            inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                            inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                             labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                             required: false,
                             errorMessage: null,
@@ -136,9 +142,10 @@ export default function Insurance() {
                         }}
                     />
                 </div>
-                <div className='flex items-center justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
+
+                <div className='flex items-center justify-center gap-8 flex-wrap md:flex-nowrap mb-8'>
                     <div className='w-full'>
-                        <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-11d">Box 11d: Is There Another Health Benefit Plan?</label>
+                        <label className="font-[500] text-[18px] text-[#3D3D3D] mb-2" htmlFor="box-11d">Box 11d: Is There Another Health Benefit Plan?</label>
                         <div className='flex gap-16 mt-4'>
                             <div className='flex items-center'>
                                 <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="yes">Yes</label>
@@ -151,12 +158,13 @@ export default function Insurance() {
                         </div>
                     </div>
                 </div>
-                <div className='flex items-end justify-center gap-6 flex-wrap md:flex-nowrap mt-4'>
+
+                <div className='flex items-end justify-center gap-8 flex-wrap md:flex-nowrap mb-8'>
                     <div className='w-full'>
                         <InputComponent
                             inputComponentProps={{
                                 label: "Box 12: Patient's or Authorized Person's Signature",
-                                inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                                inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                                 labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                                 required: false,
                                 errorMessage: null,
@@ -171,7 +179,7 @@ export default function Insurance() {
                         <InputComponent
                             inputComponentProps={{
                                 label: "Box 12: Date",
-                                inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                                inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
                                 labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                                 required: false,
                                 errorMessage: null,
@@ -182,21 +190,26 @@ export default function Insurance() {
                         />
                     </div>
                 </div>
-                <div className='mt-4'>
-                    <label className="font-[500] text-[18px] text-[#3D3D3D]" htmlFor="box-13">Box 13: Insured's or Authorized Person's Signature</label>
-                    <button className='px-4 py-2 text-center flex gap-3 text-[#2E8BC9] rounded-md mt-4 cursor-pointer shadow-md'>
+
+                <div className='mb-8'>
+                    <label className="font-[500] text-[18px] text-[#3D3D3D] mb-2" htmlFor="box-13">Box 13: Insured's or Authorized Person's Signature</label>
+                    <button className='px-4 py-3 text-center flex gap-3 items-center text-[#2E8BC9] rounded-md mt-4 cursor-pointer shadow-md hover:bg-gray-50 transition-colors'>
                         <Image src="/view.svg" alt='View signature' width="20" height="20" />
                         <span>View signature</span>
                     </button>
                 </div>
-                <h3 className='text-xl font-bold mt-4'>OR</h3>
-                <hr className='text-[#2E8BC9] bg-[#2E8BC9]' />
-                <div className='mt-4'>
+
+                <div className='mb-8'>
+                    <h3 className='text-xl font-bold text-center text-[#7C7C7C]'>OR</h3>
+                    <hr className='border-t-2 border-[#2E8BC9] my-4' />
+                </div>
+
+                <div className='mb-8'>
                     <div>
                         <InputComponent
                             inputComponentProps={{
                                 label: "Box 13: Insured's or Authorized Person's Signature",
-                                inputClass: "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                                inputClass: "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md min-h-[100px]",
                                 labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
                                 required: false,
                                 errorMessage: null,

@@ -1,6 +1,5 @@
 "use client"
 import BillingCodeDialogBox from '@/components/UI/Bliing&Coding/BillingCodeDialogBox'
-import MenuBar from '@/components/UI/MenuBar'
 import { firstCardInfo } from '@/utils/billing&coding_cards_info'
 import Image from 'next/image'
 import React, { useState } from 'react'
@@ -11,9 +10,7 @@ export default function page() {
     return (
         <div className=''>
             <div className='px-2 md:px-6'>
-                <MenuBar />
-                <br />
-                <br />
+             
                 <div className='flex items-center justify-between flex-wrap md:flex-nowrap gap-[24px]'>
                     {
                         firstCardInfo.map(info =>

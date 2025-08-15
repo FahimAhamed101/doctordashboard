@@ -201,12 +201,14 @@ export default function DoctorDashboard() {
                   <div className="text-start shadow-sm p-2 rounded-md">
                     <div className="mb-3">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect y="0.5" width="48" height="48" rx="6" fill="#F0F5FE"/>
-                        <path d="M28 14.5V18.5M20 14.5V18.5" stroke="#2E8BC9" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M25 16.5H23C19.2288 16.5 17.3431 16.5 16.1716 17.6716C15 18.8431 15 20.7288 15 24.5V26.5C15 30.2712 15 32.1569 16.1716 33.3284C17.3431 34.5 19.2288 34.5 23 34.5H25C28.7712 34.5 30.6569 34.5 31.8284 33.3284C33 32.1569 33 30.2712 33 26.5V24.5C33 20.7288 33 18.8431 31.8284 17.6716C30.6569 16.5 28.7712 16.5 25 16.5Z" stroke="#2E8BC9" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M15 22.5H33" stroke="#2E8BC9" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M23 26.5H28M20 26.5H20.009M25 30.5H20M28 30.5H27.991" stroke="#2E8BC9" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+<rect y="0.5" width="48" height="48" rx="6" fill="#FAF5FF"/>
+<path d="M32 34.5V31.5C32 28.6716 32 27.2574 31.1213 26.3787C30.2426 25.5 28.8284 25.5 26 25.5L24 27.5L22 25.5C19.1716 25.5 17.7574 25.5 16.8787 26.3787C16 27.2574 16 28.6716 16 31.5V34.5" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 25.5V31" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.5 25.5V29.5M20.5 29.5C21.6046 29.5 22.5 30.3954 22.5 31.5V32.5M20.5 29.5C19.3954 29.5 18.5 30.3954 18.5 31.5V32.5" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.5 19V18C27.5 16.067 25.933 14.5 24 14.5C22.067 14.5 20.5 16.067 20.5 18V19C20.5 20.933 22.067 22.5 24 22.5C25.933 22.5 27.5 20.933 27.5 19Z" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.75 31.75C28.75 32.1642 28.4142 32.5 28 32.5C27.5858 32.5 27.25 32.1642 27.25 31.75C27.25 31.3358 27.5858 31 28 31C28.4142 31 28.75 31.3358 28.75 31.75Z" stroke="#8226CA" stroke-width="1.5"/>
+</svg>
+
                     </div>
                     <h3 className="text-sm font-medium text-gray-600 mb-2">Total</h3>
                     <div className="flex items-center justify-between gap-2">

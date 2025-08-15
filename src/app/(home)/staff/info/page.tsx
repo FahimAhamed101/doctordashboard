@@ -2,7 +2,7 @@ import { Camera } from "lucide-react"
 import Image from "next/image"
 export default function StaffInfoForm() {
   return (
-    <div className="flex justify-center   bg-gray-100 p-4">
+    <div className="flex justify-center    p-4">
       <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-2xl font-bold text-gray-800">Staff Info</h2>

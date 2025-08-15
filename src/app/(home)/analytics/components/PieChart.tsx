@@ -83,10 +83,10 @@ export default function PieChartComponent() {
                         stats.map((card, index) => (
                             <div className='px-4 py-12 rounded-md shadow-md w-full bg-white' key={index}>
                                 <div
-                                    className={`w-10 h-10 flex items-center justify-center rounded-lg text-lg ${card.iconBg}`}
+                                    className={`w-13 h-13 flex items-center justify-center rounded-lg text-lg ${card.iconBg}`}
                                 >
                                     {/* {card.icon} */}
-                                    <img src={card.icon} alt={card.label} width="48" height="48" />
+                                    <img src={card.icon} alt={card.label} width="68" height="68" />
                                 </div>
                                 <div className='mt-8'>
                                     <div className="text-[18px] text-gray-500 font-[500]">

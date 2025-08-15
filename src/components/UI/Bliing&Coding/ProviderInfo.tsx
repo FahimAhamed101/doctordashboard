@@ -3,14 +3,14 @@ import InputComponent from "./InputComponent";
 
 export default function ProviderInfo() {
   return (
-    <div className="">
-      <div className="flex items-end  justify-center  gap-6 flex-wrap md:flex-nowrap mt-4">
+    <div className="space-y-8">
+      <div className="flex items-end justify-center gap-8 flex-wrap md:flex-nowrap">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{
               label: "Box 31: Signature of Physician or Supplier",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,
@@ -26,7 +26,7 @@ export default function ProviderInfo() {
             inputComponentProps={{
               label: "Box 12: Date",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,
@@ -38,10 +38,11 @@ export default function ProviderInfo() {
           />
         </div>
       </div>
-      <div className="mt-4 space-y-4">
+
+      <div className="space-y-6">
         <label
           htmlFor="box-23"
-          className="font-[500] text-[18px] text-[#3D3D3D]"
+          className="font-[500] text-[18px] text-[#3D3D3D] block mb-2"
         >
           Box 32: Service Facility Location Information
         </label>
@@ -71,7 +72,7 @@ export default function ProviderInfo() {
             placeholder: "456 Medical Boulevard",
           }}
         />
-        <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
+        <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
           <InputComponent
             inputComponentProps={{
               inputClass:
@@ -126,13 +127,14 @@ export default function ProviderInfo() {
           }}
         />
       </div>
-      <div className="flex items-end justify-center gap-6 space-y-4 flex-wrap md:flex-nowrap mt-4">
+
+      <div className="flex items-end justify-center gap-8 flex-wrap md:flex-nowrap">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{
               label: "Box 32a: NPI *",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,
@@ -148,7 +150,7 @@ export default function ProviderInfo() {
             inputComponentProps={{
               label: "Box 32b: Other ID#",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,
@@ -159,10 +161,11 @@ export default function ProviderInfo() {
           />
         </div>
       </div>
-      <div className="mt-4">
+
+      <div className="space-y-6">
         <label
           htmlFor="box-33"
-          className="font-[500] text-[18px] text-[#3D3D3D]"
+          className="font-[500] text-[18px] text-[#3D3D3D] block mb-2"
         >
           Box 33: Billing Provider Info & Ph#
         </label>
@@ -192,7 +195,7 @@ export default function ProviderInfo() {
             placeholder: "456 Medical Boulevard",
           }}
         />
-        <div className="flex items-center justify-center gap-2 flex-wrap md:flex-nowrap">
+        <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
           <InputComponent
             inputComponentProps={{
               inputClass:
@@ -247,13 +250,14 @@ export default function ProviderInfo() {
           }}
         />
       </div>
-      <div className="flex items-end justify-center gap-6 flex-wrap space-y-4 md:flex-nowrap mt-4">
+
+      <div className="flex items-end justify-center gap-8 flex-wrap md:flex-nowrap">
         <div className="w-full">
           <InputComponent
             inputComponentProps={{
               label: "Box 33a: NPI *",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,
@@ -269,7 +273,7 @@ export default function ProviderInfo() {
             inputComponentProps={{
               label: "Box 33b: Other ID#",
               inputClass:
-                "text-[16px] mt-2 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
+                "text-[16px] mt-4 border-none focus:outline-2 focus:outline-[#2E8BC9] rounded-[8px] p-[12px] w-full shadow-md",
               labelClass: "font-[500] text-[18px] text-[#3D3D3D]",
               required: false,
               errorMessage: null,

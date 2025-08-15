@@ -1,5 +1,6 @@
 "use client"
-import MenuBar from '@/components/UI/MenuBar';
+
+import { ChevronDown, X } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
@@ -11,6 +12,11 @@ const dummyTasks = [
     { id: 5, name: 'Task name is the task name', status: 'complete', priority: 'none', date: 'Feb 25, 2025', completed: true },
     { id: 6, name: 'Task name is the task name', status: 'complete', priority: 'none', date: 'Feb 25, 2025', completed: true }
 ];
+interface SelectedPerson {
+  id: string;
+  name: string;
+  avatar: string;
+}
 
 const Reminder = () => {
     const [tasks, setTasks] = useState(dummyTasks);
@@ -27,12 +33,63 @@ const Reminder = () => {
     const deleteTask = (id: number) => {
         setTasks((prev) => prev.filter((task) => task.id !== id));
     };
+  const [selectedPeople, setSelectedPeople] = useState<SelectedPerson[]>([
+    {
+      id: "1",
+      name: "Mahmudur Rahman taluk...",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+    },
+    {
+      id: "2", 
+      name: "Mahmudur Rahman taluk...",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=32&h=32&fit=crop&crop=face",
+    },
+    {
+      id: "3",
+      name: "Mahmudur Rahman taluk...",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face",
+    },
+  ]);
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const availableNames = [
+    "Mahmudur Rahman talukder", 
+    "Sarah Johnson", 
+    "Michael Chen", 
+    "Emily Davis", 
+    "David Wilson"
+  ];
+
+  const handleRemovePerson = (id: string) => {
+    setSelectedPeople((prev) => prev.filter((person) => person.id !== id));
+  };
+
+  const handleAddPerson = (name: string) => {
+    const avatars = [
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1494790108755-2616b612b789?w=32&h=32&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+    ];
+    
+    const newPerson: SelectedPerson = {
+      id: Date.now().toString(),
+      name: name.length > 20 ? name.substring(0, 20) + "..." : name,
+      avatar: avatars[Math.floor(Math.random() * avatars.length)],
+    };
+    
+    setSelectedPeople((prev) => [...prev, newPerson]);
+    setIsDropdownOpen(false);
+    setSelectedValue("");
+  };
     return (
         <div className="p-2 md:p-8">
-            <MenuBar />
-            <div className=" rounded-xl  mt-8">
-                <div className="flex justify-between items-center mb-4 bg-white p-4 rounded-md shadow-md">
+        
+            <div className=" rounded-xl  ">
+                <div className="flex justify-between items-center mb-4 bg-white p-6 rounded-md shadow-md">
                     <div>
                         <h2 className="text-xl font-semibold">Reminder</h2>
                         <p className="text-sm text-gray-500">Manage all the task reminder</p>
@@ -53,7 +110,7 @@ const Reminder = () => {
                                         type="checkbox"
                                         checked={task.completed}
                                         onChange={() => toggleComplete(task.id)}
-                                        className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                                        className="min-w-6 min-h-6 before:bg-[#F2F8FD]  appearance-none text-[#F2F8FD] border-none outline-none bg-[#F2F8FD] rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                                     />
                                     <span
                                         className={`text-base truncate ${task.completed ? 'line-through text-gray-400' : 'text-black'}`}
@@ -61,12 +118,12 @@ const Reminder = () => {
                                         {task.name}
                                     </span>
                                     {task.status === 'new' && (
-                                        <span className="bg-blue-100 text-[#2E8BC9] px-2 py-0.5 text-xs rounded-full whitespace-nowrap">
+                                        <span className="bg-[#2E8BC9] text-[#FFFFFF] px-2 py-0.5 text-xs rounded-full whitespace-nowrap">
                                             New
                                         </span>
                                     )}
                                 </div>
-                                <div className="flex items-center gap-2 flex-1 justify-center -ml-12">
+                                <div className="flex items-center gap-2 flex-1 justify-center -ml-6">
                                     {task.status === 'complete' ? (
                                         <div className="text-green-600 text-sm bg-green-100 px-2 py-0.5 rounded-full flex items-center justify-center gap-1">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,8 +142,8 @@ const Reminder = () => {
                                         </span>
                                     ) : null}
                                 </div>
-                                <div className="flex items-center gap-6 flex-1 justify-end min-w-0 -ml-12">
-                                    <div className="flex items-center w-[7rem] ">
+                                <div className="flex items-center gap-6 flex-2 justify-between min-w-0 ">
+                                    <div className="flex items-center w-[7rem]  pl-12">
                                         {[1, 2, 3].map((_, i) => (
                                             <img
                                                 key={i}
@@ -138,15 +195,72 @@ const Reminder = () => {
                                         <label htmlFor="normal" className='text-md'>Normal</label>
                                     </div>
                                 </div>
-                                <div className='mt-8'>
-                                    <label htmlFor="name" className='text-[20px] font-[500]'>Choose name</label>
-                                    <select name="name" id="name" className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none' >
-                                        <option value="">Select name</option>
-                                        <option value="">Value 2</option>
-                                        <option value="">Value 3</option>
-                                        <option value="">Value 4</option>
-                                    </select>
-                                </div>
+              
+                                        <div className='pt-3'>
+                                            <label className="block text-lg  font-medium text-[#3D3D3D] mb-1">Choose name </label>
+                                            <div className="relative">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                                    className="w-full flex justify-between items-center px-3 py-2 shadow-md bg-white rounded-md  focus:outline-none focus:ring-[#2E8BC9] focus:border-[#2E8BC9]"
+                                                >
+                                                    <span className={selectedValue ? "text-gray-900" : "text-gray-500"}>
+                                                        {selectedValue || "Select name"}
+                                                    </span>
+                                                    <ChevronDown className="h-5 w-5 text-gray-400" />
+                                                </button>
+                                                
+                                                {isDropdownOpen && (
+                                                    <div className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 ring-1 ring-black ring-opacity-5 overflow-auto">
+                                                        {availableNames.map((name) => (
+                                                            <button
+                                                                key={name}
+                                                                type="button"
+                                                                onClick={() => handleAddPerson(name)}
+                                                                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                            >
+                                                                {name}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Selected People */}
+                                            <div className="mt-3 space-y-2 ">
+                                                {selectedPeople.map((person) => (
+                                                    <div key={person.id} className="flex items-center justify-between rounded-4xl bg-gray-50  p-2">
+                                                        <div className="flex items-center space-x-3 ">
+                                                            <Image
+                                                                src={person.avatar}
+                                                                alt={person.name}
+                                                                width={32}
+                                                                height={32}
+                                                                className="w-8 h-8 rounded-full"
+                                                            />
+                                                            <span className="text-sm font-medium text-gray-700">{person.name}</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => handleRemovePerson(person.id)}
+                                                            className="text-gray-400 bg-[#FFFFFF] rounded-full p-1 hover:text-gray-600"
+                                                        >
+                                                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_2166_55854"  maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_2166_55854)">
+<path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#3D3D3D"/>
+</g>
+</svg>
+
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+     
                                 <div className='mt-8'>
                                     <label htmlFor="note" className='text-[20px] font-[500]'>Note</label>
                                     <textarea name="note" id="note" placeholder='Type note' className='border-none outline-none p-2 text-lg rounded-md shadow-md w-full bg-white focus-within:ring-2 focus-within:ring-[#2E8BC9] focus-within:outline-none'></textarea>

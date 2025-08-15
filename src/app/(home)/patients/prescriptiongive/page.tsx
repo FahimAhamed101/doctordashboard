@@ -31,14 +31,18 @@ export default function CheckInForm() {
         <div className="p-6 ">
           <h2 className="text-lg font-medium text-gray-700">Check In Information</h2>
         </div>
-        <div className="p-6">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="p-6 ">
+          <div className="grid md:grid-cols-2 gap-8 pb-5 border-b border-[#DCDCDC]">
             {/* Doctor Section */}
-            <div>
-              <h3 className="text-md font-bold text-gray-600 mb-4">Doctor</h3>
-              <div className="flex items-center space-x-3">
-                <div className="h-12 w-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-medium">
-                  MM
+            <div className="border-r border-[#DCDCDC]">
+              <h3 className="text-lg font-bold text-[#3D3D3D] mb-4">Doctor</h3>
+              <div className="flex items-center space-x-3 ">
+                <div className="h-15 w-15 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-medium">
+               <img
+                src="/placeholder.svg"
+                alt="Dr. Mahmudur Rahman"
+                className="w-full h-full object-cover"
+              />
                 </div>
                 <div>
                   <p className="font-medium text-gray-900">Dr. Moule Manix</p>
@@ -54,9 +58,9 @@ export default function CheckInForm() {
 
             {/* Patient Section */}
             <div>
-              <h3 className="text-md font-bold text-gray-600 mb-4">Patients</h3>
+              <h3 className="text-lg font-semibold text-[#3D3D3D] mb-4">Patients</h3>
               <div className="flex items-center space-x-3">
-                <div className="h-12 w-12 rounded-full bg-[#2E8BC9] flex items-center justify-center text-white font-medium">
+                <div className="h-15 w-15 rounded-full bg-[#2E8BC9] flex items-center justify-center text-white font-medium">
                   Ma
                 </div>
                 <div className="flex-1">
@@ -105,7 +109,7 @@ export default function CheckInForm() {
                       id={symptom.replace(/\s+/g, "-").toLowerCase()}
                       checked={selectedSymptoms.includes(symptom)}
                       onChange={() => toggleSymptom(symptom)}
-                      className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                      className="min-w-6 min-h-6 before:bg-[#F2F8FD]  appearance-none text-[#F2F8FD] border-none outline-none bg-[#F2F8FD] rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                     />
                     <label
                       htmlFor={symptom.replace(/\s+/g, "-").toLowerCase()}
@@ -123,8 +127,8 @@ export default function CheckInForm() {
               <h3 className="text-sm font-medium text-gray-900 mb-4">
                 Have you had any changes in your oral health since your last visit?
               </h3>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-6 w-1/2 justify-between">
+                <div className="flex items-center space-x-2 ">
                   <input
                     type="radio"
                     id="changes-yes"
@@ -132,7 +136,7 @@ export default function CheckInForm() {
                     value="yes"
                     checked={healthChanges === "yes"}
                     onChange={() => setHealthChanges("yes")}
-                   className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                   className="min-w-6 min-h-6 bg-[#F2F8FD] appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                   />
                   <label htmlFor="changes-yes" className="text-sm text-gray-700 cursor-pointer">
                     Yes
@@ -146,7 +150,7 @@ export default function CheckInForm() {
                     value="no"
                     checked={healthChanges === "no"}
                     onChange={() => setHealthChanges("no")}
-               className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+               className="min-w-6 bg-[#F2F8FD] min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                   />
                   <label htmlFor="changes-no" className="text-sm text-gray-700 cursor-pointer">
                     No
@@ -162,18 +166,18 @@ export default function CheckInForm() {
   placeholder=" what?"
   value={changesDetails}
   onChange={(e) => setChangesDetails(e.target.value)}
-  className="mt-1 p-1 block w-50 h-15 border rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm placeholder:mb-2"
+  className="mt-1 p-1 block w-80 h-15 border rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm placeholder:mb-2"
 />
                 </div>
               )}
             </div>
 
             {/* Question 3 */}
-            <div>
+            <div >
               <h3 className="text-sm font-medium text-gray-900 mb-4">
                 Are you currently taking any dental-related medications or antibiotics?
               </h3>
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-6 justify-between w-1/2">
                 <div className="flex items-center space-x-2">
                   <input
                     type="radio"
@@ -182,7 +186,7 @@ export default function CheckInForm() {
                     value="yes"
                     checked={takingMeds === "yes"}
                     onChange={() => setTakingMeds("yes")}
-                className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                className="min-w-6 min-h-6 bg-[#F2F8FD] appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                   />
                   <label htmlFor="medications-yes" className="text-sm text-gray-700 cursor-pointer">
                     Yes
@@ -196,7 +200,7 @@ export default function CheckInForm() {
                     value="no"
                     checked={takingMeds === "no"}
                     onChange={() => setTakingMeds("no")}
-                  className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                  className="min-w-6 min-h-6 bg-[#F2F8FD] appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                   />
                   <label htmlFor="medications-no" className="text-sm text-gray-700 cursor-pointer">
                     No

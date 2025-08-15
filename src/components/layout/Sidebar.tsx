@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { cn } from "@/utils/cn";
 import Logo from "@/assets/logo";
@@ -351,17 +351,25 @@ function SidebarSection({
     </div>
   );
 }
+export function useScrollToTop() {
+  const pathname = usePathname();
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+}
 export function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
+  
+  // Initialize scroll to top functionality
+  useScrollToTop();
 
   // Get active item from current pathname
   const getActiveItem = () => {
     const allItems = [
       ...mainMenuItems,
       ...mobileMenuItems,
- 
       ...otherItems,
     ];
     const currentItem = allItems.find((item) => item.href === pathname);
@@ -370,10 +378,48 @@ export function Sidebar() {
 
   const [activeItem, setActiveItem] = useState(getActiveItem());
 
+  // Enhanced item click handler with scroll to top
   const handleItemClick = (item: any) => {
+    // Update active state immediately for visual feedback
     setActiveItem(item.id);
+    
+    // Navigate to the new route
     router.push(item.href);
+    
+    // Force scroll to top after a short delay to ensure navigation is complete
+    setTimeout(() => {
+      try {
+        // Try multiple scroll targets
+        const targets = [
+          document.querySelector('main'),
+          document.querySelector('[data-main-content]'),
+          document.querySelector('#main-content'),
+          document.body,
+          document.documentElement
+        ];
+        
+        targets.forEach(target => {
+          if (target && target.scrollTo) {
+            target.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+        
+        // Also scroll window as fallback
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (error) {
+        // Silent fallback to instant scroll
+        window.scrollTo(0, 0);
+      }
+    }, 100);
   };
+
+  // Update active item when pathname changes (for browser back/forward)
+  useEffect(() => {
+    const newActiveItem = getActiveItem();
+    if (newActiveItem !== activeItem) {
+      setActiveItem(newActiveItem);
+    }
+  }, [pathname]);
 
   return (
     <>
@@ -471,6 +517,7 @@ export function Sidebar() {
               </p>
             </div>
             <div className="w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">
+              <Link href="/switch-account">
               <svg
                 width="32"
                 height="32"
@@ -508,6 +555,8 @@ export function Sidebar() {
                   strokeLinejoin="round"
                 />
               </svg>
+              </Link>
+              
             </div>
           </div>
 
