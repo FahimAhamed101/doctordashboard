@@ -7,7 +7,7 @@ const appointmentStatusData = [
   { name: 'Canceled', value: 8 }
 ];
 
-const PIE_COLORS = ['#2E8BC9', '#D6EBFD', '#1A588A']; // Blue, Green, Red
+const PIE_COLORS = ['#D6EBFD','#2E8BC9' , '#1A588A']; // Blue, Green, Red
 
 const renderCustomizedLabel = ({
   cx,
@@ -22,12 +22,16 @@ const renderCustomizedLabel = ({
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
+  
+  // Determine fill color based on percentage
+  // Use black for percentages >= 50%, white for smaller percentages
+  const fillColor = percent >= 0.5 ? "black" : "white";
+  
   return (
     <text
       x={x}
       y={y}
-      fill="white"
+      fill={fillColor}
       textAnchor="middle"
       dominantBaseline="central"
       fontSize={12}
