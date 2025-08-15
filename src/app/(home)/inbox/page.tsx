@@ -39,9 +39,9 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
   }
 
   return (
-    <div className="flex-1 flex flex-col bg-white">
+    <div className="flex-1 flex flex-col  rounded-lg bg-white">
       {/* Chat header */}
-      <div className="p-4 border-b border-[#F3F3F3] bg-[#DCDCDC]">
+      <div className="p-4 border-b border-[#F3F3F3] rounded-lg bg-[#DCDCDC]">
         <h2 className="text-xl font-semibold">{contactName}</h2>
       </div>
 
@@ -93,7 +93,7 @@ const ChatWindow = ({ contactName, messages }: ChatWindowProps) => {
         <input
           type="text"
           placeholder="Type your message"
-          className="flex-1 px-3 py-2 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="flex-1 px-3 py-5 shadow-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
@@ -131,7 +131,7 @@ const InboxSidebar = ({ contacts }: InboxSidebarProps) => {
     setIsOpen(false);
     console.log('Selected:', value);
   }; return (
-    <div className="w-full p-2 md:w-1/3 lg:w-1/4  px-2 bg-white flex flex-col">
+    <div className="w-full rounded-lg p-2 md:w-1/3 lg:w-1/4  px-2 bg-white flex flex-col">
       {/* Sidebar header */}
       <div className="p-4 ">
         <h2 className="text-xl font-semibold">Inbox</h2>

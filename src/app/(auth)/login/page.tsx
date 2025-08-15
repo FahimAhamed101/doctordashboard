@@ -19,8 +19,8 @@ import GoogleSignInButton from "@/components/UI/GoogleSignInButton";
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: "fahimahamed@gmail.com",
+    password: "132456",
     rememberMe: false,
   });
   const [errors, setErrors] = useState({

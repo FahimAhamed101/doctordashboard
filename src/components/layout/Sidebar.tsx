@@ -430,7 +430,7 @@ export function Sidebar() {
             className="flex items-center"
             onClick={() => {
               setActiveItem("home");
-              router.push("/home");
+              router.push("/");
             }}
           >
             <svg
