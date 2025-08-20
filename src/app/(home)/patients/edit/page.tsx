@@ -157,7 +157,7 @@ export default function PatientDashboard() {
               </div>
               <div className="flex items-center space-x-1 text-[#237B10]">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.33331 9.3335L5.66665 11.6668L12.6666 4.3335" stroke="#237B10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.33331 9.3335L5.66665 11.6668L12.6666 4.3335" stroke="#237B10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
                 <span>Complete</span>

@@ -633,7 +633,7 @@ const MedicalInformationPage = () => {
                       type="checkbox"
                       checked={formData.conditions.includes(condition)}
                       onChange={() => handleConditionChange(condition)}
-                      className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                     className="min-w-6 min-h-6 before:bg-[#F2F8FD]  appearance-none text-[#F2F8FD] border-none outline-none bg-[#F2F8FD] rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                     />
                     <span className="ml-3 text-gray-700">{condition}</span>
                   </label>
@@ -714,7 +714,7 @@ const MedicalInformationPage = () => {
                       type="checkbox"
                       checked={formData.lifestyleFactors.includes(factor)}
                       onChange={() => handleLifestyleChange(factor)}
-                      className="min-w-6 min-h-6 appearance-none border-none outline-none rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
+                     className="min-w-6 min-h-6 before:bg-[#F2F8FD]  appearance-none text-[#F2F8FD] border-none outline-none bg-[#F2F8FD] rounded-sm shadow-md checked:bg-[#2E8BC9] checked:ring-[#2E8BC9] transition-all checkmarkInput"
                     />
                     <span className="ml-3 text-gray-700">{factor}</span>
                   </label>
@@ -732,7 +732,7 @@ const MedicalInformationPage = () => {
                   Previous
                 </button>
               </Link>
-              <Link href="/insurance-info">
+              <Link href="/patients/insurance-info">
                 <button
                   type="submit"
                   className="flex items-center px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-[#1a588a] cursor-pointer transition-colors"

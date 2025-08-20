@@ -4,12 +4,7 @@ import { Stethoscope, Mail, Phone, Edit, CalendarDays, Clock, Plus, X, Info, Che
 import Link from 'next/link';
 import { AppointmentCard } from '../../patients/appointment/components/patient/AppointmentCard';
 import { AppointmentDetails } from '../../patients/appointment/components/patient/AppointmentDetails';
-import { PatientInfo } from '../../patients/appointment/components/patient/PatientInfo';
-import { DocumentList } from '../../patients/appointment/components/patient/DocumentList';
-import { MedicalInfo } from '../../patients/appointment/components/patient/MedicalInfo';
-import { InsuranceInfo } from '../../patients/appointment/components/patient/InsuranceInfo';
-import { CaregiverList } from '../../patients/appointment/components/patient/CaregiverList';
-import { CaregiverDetails } from '../../patients/appointment/components/patient/CaregiverDetails';
+
 
 export default function DoctorDashboard() {
   const [activeTab, setActiveTab] = useState('appointment');
@@ -202,11 +197,11 @@ export default function DoctorDashboard() {
                     <div className="mb-3">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="0.5" width="48" height="48" rx="6" fill="#FAF5FF"/>
-<path d="M32 34.5V31.5C32 28.6716 32 27.2574 31.1213 26.3787C30.2426 25.5 28.8284 25.5 26 25.5L24 27.5L22 25.5C19.1716 25.5 17.7574 25.5 16.8787 26.3787C16 27.2574 16 28.6716 16 31.5V34.5" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M28 25.5V31" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20.5 25.5V29.5M20.5 29.5C21.6046 29.5 22.5 30.3954 22.5 31.5V32.5M20.5 29.5C19.3954 29.5 18.5 30.3954 18.5 31.5V32.5" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M27.5 19V18C27.5 16.067 25.933 14.5 24 14.5C22.067 14.5 20.5 16.067 20.5 18V19C20.5 20.933 22.067 22.5 24 22.5C25.933 22.5 27.5 20.933 27.5 19Z" stroke="#8226CA" stroke-width="2.025" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M28.75 31.75C28.75 32.1642 28.4142 32.5 28 32.5C27.5858 32.5 27.25 32.1642 27.25 31.75C27.25 31.3358 27.5858 31 28 31C28.4142 31 28.75 31.3358 28.75 31.75Z" stroke="#8226CA" stroke-width="1.5"/>
+<path d="M32 34.5V31.5C32 28.6716 32 27.2574 31.1213 26.3787C30.2426 25.5 28.8284 25.5 26 25.5L24 27.5L22 25.5C19.1716 25.5 17.7574 25.5 16.8787 26.3787C16 27.2574 16 28.6716 16 31.5V34.5" stroke="#8226CA" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M28 25.5V31" stroke="#8226CA" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M20.5 25.5V29.5M20.5 29.5C21.6046 29.5 22.5 30.3954 22.5 31.5V32.5M20.5 29.5C19.3954 29.5 18.5 30.3954 18.5 31.5V32.5" stroke="#8226CA" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M27.5 19V18C27.5 16.067 25.933 14.5 24 14.5C22.067 14.5 20.5 16.067 20.5 18V19C20.5 20.933 22.067 22.5 24 22.5C25.933 22.5 27.5 20.933 27.5 19Z" stroke="#8226CA" strokeWidth="2.025" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M28.75 31.75C28.75 32.1642 28.4142 32.5 28 32.5C27.5858 32.5 27.25 32.1642 27.25 31.75C27.25 31.3358 27.5858 31 28 31C28.4142 31 28.75 31.3358 28.75 31.75Z" stroke="#8226CA" strokeWidth="1.5"/>
 </svg>
 
                     </div>

@@ -32,7 +32,7 @@ export default function page() {
                     <p className="text-xl font-bold text-[#1A588A]">1,234</p>
                 </div>
             </div>
-            <div className="bg-gray-50 mt-4 p-4 sm:w-[424px] w-full">
+            <div className="bg-gray-50 mt-4  sm:w-[424px] w-full">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4">Message volume</h2>
                 <div className="space-y-4">
                     {messageData.map((item, idx) => (

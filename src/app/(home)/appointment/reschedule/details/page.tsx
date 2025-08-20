@@ -177,10 +177,10 @@ export default function PatientAppointment() {
                   <div className="flex justify-end">
                 <button className="w-6 h-6 p-0 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full">
                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13 3.66699L12.5869 10.3504C12.4813 12.0579 12.4285 12.9117 12.0005 13.5256C11.7889 13.8291 11.5165 14.0852 11.2005 14.2777C10.5614 14.667 9.706 14.667 7.99513 14.667C6.28208 14.667 5.42553 14.667 4.78603 14.2769C4.46987 14.0841 4.19733 13.8275 3.98579 13.5235C3.55792 12.9087 3.5063 12.0537 3.40307 10.3438L3 3.66699" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M2 3.66634H14M10.7038 3.66634L10.2487 2.72749C9.9464 2.10385 9.7952 1.79202 9.53447 1.59755C9.47667 1.55441 9.4154 1.51603 9.35133 1.48281C9.0626 1.33301 8.71607 1.33301 8.023 1.33301C7.31253 1.33301 6.95733 1.33301 6.66379 1.48909C6.59873 1.52368 6.53665 1.56361 6.47819 1.60845C6.21443 1.81081 6.06709 2.13404 5.77241 2.78051L5.36861 3.66634" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M6.33301 11V7" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M9.66699 11V7" stroke="#3D3D3D" stroke-linecap="round"/>
+<path d="M13 3.66699L12.5869 10.3504C12.4813 12.0579 12.4285 12.9117 12.0005 13.5256C11.7889 13.8291 11.5165 14.0852 11.2005 14.2777C10.5614 14.667 9.706 14.667 7.99513 14.667C6.28208 14.667 5.42553 14.667 4.78603 14.2769C4.46987 14.0841 4.19733 13.8275 3.98579 13.5235C3.55792 12.9087 3.5063 12.0537 3.40307 10.3438L3 3.66699" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M2 3.66634H14M10.7038 3.66634L10.2487 2.72749C9.9464 2.10385 9.7952 1.79202 9.53447 1.59755C9.47667 1.55441 9.4154 1.51603 9.35133 1.48281C9.0626 1.33301 8.71607 1.33301 8.023 1.33301C7.31253 1.33301 6.95733 1.33301 6.66379 1.48909C6.59873 1.52368 6.53665 1.56361 6.47819 1.60845C6.21443 1.81081 6.06709 2.13404 5.77241 2.78051L5.36861 3.66634" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M6.33301 11V7" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M9.66699 11V7" stroke="#3D3D3D" strokeLinecap="round"/>
 </svg>
 
                 </button></div>
@@ -191,10 +191,10 @@ export default function PatientAppointment() {
                   <div className="flex justify-end">
                 <button className="w-6 h-6 p-0 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full">
                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13 3.66699L12.5869 10.3504C12.4813 12.0579 12.4285 12.9117 12.0005 13.5256C11.7889 13.8291 11.5165 14.0852 11.2005 14.2777C10.5614 14.667 9.706 14.667 7.99513 14.667C6.28208 14.667 5.42553 14.667 4.78603 14.2769C4.46987 14.0841 4.19733 13.8275 3.98579 13.5235C3.55792 12.9087 3.5063 12.0537 3.40307 10.3438L3 3.66699" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M2 3.66634H14M10.7038 3.66634L10.2487 2.72749C9.9464 2.10385 9.7952 1.79202 9.53447 1.59755C9.47667 1.55441 9.4154 1.51603 9.35133 1.48281C9.0626 1.33301 8.71607 1.33301 8.023 1.33301C7.31253 1.33301 6.95733 1.33301 6.66379 1.48909C6.59873 1.52368 6.53665 1.56361 6.47819 1.60845C6.21443 1.81081 6.06709 2.13404 5.77241 2.78051L5.36861 3.66634" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M6.33301 11V7" stroke="#3D3D3D" stroke-linecap="round"/>
-<path d="M9.66699 11V7" stroke="#3D3D3D" stroke-linecap="round"/>
+<path d="M13 3.66699L12.5869 10.3504C12.4813 12.0579 12.4285 12.9117 12.0005 13.5256C11.7889 13.8291 11.5165 14.0852 11.2005 14.2777C10.5614 14.667 9.706 14.667 7.99513 14.667C6.28208 14.667 5.42553 14.667 4.78603 14.2769C4.46987 14.0841 4.19733 13.8275 3.98579 13.5235C3.55792 12.9087 3.5063 12.0537 3.40307 10.3438L3 3.66699" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M2 3.66634H14M10.7038 3.66634L10.2487 2.72749C9.9464 2.10385 9.7952 1.79202 9.53447 1.59755C9.47667 1.55441 9.4154 1.51603 9.35133 1.48281C9.0626 1.33301 8.71607 1.33301 8.023 1.33301C7.31253 1.33301 6.95733 1.33301 6.66379 1.48909C6.59873 1.52368 6.53665 1.56361 6.47819 1.60845C6.21443 1.81081 6.06709 2.13404 5.77241 2.78051L5.36861 3.66634" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M6.33301 11V7" stroke="#3D3D3D" strokeLinecap="round"/>
+<path d="M9.66699 11V7" stroke="#3D3D3D" strokeLinecap="round"/>
 </svg>
 
                 </button></div>
@@ -216,21 +216,23 @@ export default function PatientAppointment() {
 
         {/* Start Appointment Button */}
         <div className="flex gap-3 items-center">
-            <button
-          className="flex gap-2 items-center shadow-sm bg-[#EEFEE7] hover:bg-blue-600 text-[#2E8BC9] px-4 py-2 text-base font-medium rounded-md"
+          <Link href="/appointment/reschedule">
+           <button
+          className="flex gap-2 items-center shadow-sm bg-[#EEFEE7]  text-[#2E8BC9] px-4 py-2 text-base font-medium rounded-md"
           onClick={() => setShowTimer(true)}
         ><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.3178 13C12.9345 11.9251 14 10.087 14 8C14 4.68629 11.3137 2 8 2C7.54173 2 7.09547 2.05137 6.66667 2.14868M11.3178 13V10.6667M11.3178 13H13.6667M4.66667 3.01037C3.05869 4.08671 2 5.91972 2 8C2 11.3137 4.68629 14 8 14C8.45827 14 8.90453 13.9486 9.33333 13.8513M4.66667 3.01037V5.33333M4.66667 3.01037H2.33333" stroke="#2E8BC9" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.3178 13C12.9345 11.9251 14 10.087 14 8C14 4.68629 11.3137 2 8 2C7.54173 2 7.09547 2.05137 6.66667 2.14868M11.3178 13V10.6667M11.3178 13H13.6667M4.66667 3.01037C3.05869 4.08671 2 5.91972 2 8C2 11.3137 4.68629 14 8 14C8.45827 14 8.90453 13.9486 9.33333 13.8513M4.66667 3.01037V5.33333M4.66667 3.01037H2.33333" stroke="#2E8BC9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
           Reschedule
         </button>
+          </Link> 
 <div className="terxt-gray-800">
    OR
 </div>
    
              <button
-          className="flex gap-2 items-center shadow-sm bg-white hover:bg-blue-600 text-[#B42121] px-4 py-2 text-base font-medium rounded-md"
+          className="flex gap-2 items-center shadow-sm bg-white  text-[#B42121] px-4 py-2 text-base font-medium rounded-md"
           onClick={() => setIsModalOpen(true)}
         >
 

@@ -81,7 +81,7 @@ export default function PieChartComponent() {
                 <div className='md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                     {
                         stats.map((card, index) => (
-                            <div className='px-4 py-12 rounded-md shadow-md w-full bg-white' key={index}>
+                            <div className='px-4 py-12 h-[90%] rounded-md shadow-md w-full bg-white' key={index}>
                                 <div
                                     className={`w-13 h-13 flex items-center justify-center rounded-lg text-lg ${card.iconBg}`}
                                 >

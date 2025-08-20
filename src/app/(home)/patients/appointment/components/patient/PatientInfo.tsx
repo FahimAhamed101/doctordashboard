@@ -53,10 +53,18 @@ export const PatientInfo: React.FC = () => (
         <p className="text-sm text-muted-foreground mb-3">Upload Driver's License Images</p>
         <div className="flex gap-3 items-center">
           <Button variant="outline" className="flex gap-2 items-center border-none shadow-md">
-            Front Of License
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.3627 7.36301C14.5654 7.64721 14.6667 7.78934 14.6667 7.99967C14.6667 8.21001 14.5654 8.35214 14.3627 8.63634C13.452 9.91341 11.1262 12.6663 8.00004 12.6663C4.87389 12.6663 2.54811 9.91341 1.6374 8.63634C1.43471 8.35214 1.33337 8.21001 1.33337 7.99967C1.33337 7.78934 1.43471 7.64721 1.6374 7.36301C2.54811 6.08597 4.87389 3.33301 8.00004 3.33301C11.1262 3.33301 13.452 6.08597 14.3627 7.36301Z" stroke="#2E8BC9" stroke-width="1.5"/>
+<path d="M10 8C10 6.8954 9.1046 6 8 6C6.8954 6 6 6.8954 6 8C6 9.1046 6.8954 10 8 10C9.1046 10 10 9.1046 10 8Z" stroke="#2E8BC9" stroke-width="1.5"/>
+</svg>
+  Front Of License
           </Button>
           <Button variant="outline" className="flex gap-2 items-center border-none shadow-md">
-            Back Of License
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.3627 7.36301C14.5654 7.64721 14.6667 7.78934 14.6667 7.99967C14.6667 8.21001 14.5654 8.35214 14.3627 8.63634C13.452 9.91341 11.1262 12.6663 8.00004 12.6663C4.87389 12.6663 2.54811 9.91341 1.6374 8.63634C1.43471 8.35214 1.33337 8.21001 1.33337 7.99967C1.33337 7.78934 1.43471 7.64721 1.6374 7.36301C2.54811 6.08597 4.87389 3.33301 8.00004 3.33301C11.1262 3.33301 13.452 6.08597 14.3627 7.36301Z" stroke="#2E8BC9" stroke-width="1.5"/>
+<path d="M10 8C10 6.8954 9.1046 6 8 6C6.8954 6 6 6.8954 6 8C6 9.1046 6.8954 10 8 10C9.1046 10 10 9.1046 10 8Z" stroke="#2E8BC9" stroke-width="1.5"/>
+</svg>
+  Back Of License
           </Button>
         </div>
       </div>

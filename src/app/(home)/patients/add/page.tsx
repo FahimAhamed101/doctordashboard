@@ -590,7 +590,7 @@ const PatientInfoPage = () => {
                 </button>
               </Link>
 
-              <Link href="/medical-info">
+              <Link href="/patients/medical-info">
                 <button
                   type="button"
                   onClick={handleNext}

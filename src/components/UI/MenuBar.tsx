@@ -6,9 +6,9 @@ export default function MenuBar() {
     <>
         <header className='flex items-center md:justify-between justify-start md:flex-row flex-col w-full'>
             <div  className='absolute w-25 h-25 top-4 left-4 md:static'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 6V18" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M8 12.0005H20" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 8C12 8 8.00001 10.946 8 12C7.99999 13.0541 12 16 12 16" stroke="#3D3D3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 6V18" stroke="#3D3D3D" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M8 12.0005H20" stroke="#3D3D3D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M12 8C12 8 8.00001 10.946 8 12C7.99999 13.0541 12 16 12 16" stroke="#3D3D3D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 </div>
             <div className='flex items-center justify-end gap-4'>

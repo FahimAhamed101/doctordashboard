@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Calendar, Clock, CheckCircle, MapPin, Download } from "lucide-react"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function Component() {
     const [showTimer, setShowTimer] = useState(true)
@@ -68,7 +69,7 @@ export default function Component() {
               </div>
               <div className="flex items-center space-x-1 text-[#237B10]">
                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3.33301 9.33301L5.66634 11.6663L12.6663 4.33301" stroke="#237B10" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.33301 9.33301L5.66634 11.6663L12.6663 4.33301" stroke="#237B10" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
                 <span>Complete</span>
@@ -140,9 +141,9 @@ export default function Component() {
 
         {/* Book Appointment Button */}
         <div className="p-6 pt-0">
-          <button className="w-full py-2 px-4 bg-[#2E8BC9] hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
+           <Link href="/appointment/reschedule/details"> <button className="w-full py-2 px-4 bg-[#2E8BC9]  text-white font-medium rounded-md transition-colors">
            End appointment & Send to secretary 
-          </button>
+          </button></Link>
         </div>
       </div>
     {/* Timer Overlay */}
@@ -158,7 +159,8 @@ export default function Component() {
                 <h3 className="font-semibold text-gray-900">Mahmudur Rahman</h3>
                 <p className="text-sm text-gray-500">Patient ID: P607RB</p>
               </div>
-              <button className="p-2 text-blue-500 rounded-full hover:bg-gray-100">
+            
+               <button className="p-2 text-blue-500 rounded-full hover:bg-gray-100">
                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_3423_46603)">
 <rect x="4" y="1" width="40" height="40" rx="8" fill="#2E8BC9"/>
@@ -179,6 +181,8 @@ export default function Component() {
 </svg>
 
               </button>
+          
+             
             </div>
 
             {/* Timer Display */}

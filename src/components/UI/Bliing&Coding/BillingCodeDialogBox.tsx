@@ -46,7 +46,7 @@ export default function BillingCodeDialogBox({showDialogBox, setShowDialogBox}: 
         </div>
 
         <div
-          style={{ boxShadow: "0 -6px 15px rgba(0, 0, 0, 0.1)" }}
+         
           className="bg-white p-4 flex items-center justify-center gap-4"
         >
           <button onClick={() => setShowDialogBox(false)} className="hover:opacity-90 shadow-md text-[#2E8BC9]  rounded-md w-full py-2 text-center cursor-pointer text-[18px] font-[500]">

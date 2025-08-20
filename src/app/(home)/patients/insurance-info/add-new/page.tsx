@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { User, Calendar, Upload, CheckCircle } from "lucide-react";
-import { useInsurance } from "../../InsuranceContext";
+import { useInsurance } from "../InsuranceContext";
 import { useRouter } from "next/navigation";
 import Button from "@/components/UI/Button";
 import Link from "next/link";

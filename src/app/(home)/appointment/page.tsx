@@ -298,9 +298,9 @@ export default function AppointmentDashboard() {
                     </div>
                     <div className="flex justify-between  text-sm text-gray-900 mb-4">
                       <div className="flex gap-2"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.6668 1.33301V3.99967M5.3335 1.33301V3.99967" stroke="#3D3D3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M8.66667 2.66699H7.33333C4.81917 2.66699 3.5621 2.66699 2.78105 3.44804C2 4.22909 2 5.48617 2 8.00033V9.33366C2 11.8478 2 13.1049 2.78105 13.8859C3.5621 14.667 4.81917 14.667 7.33333 14.667H8.66667C11.1808 14.667 12.4379 14.667 13.2189 13.8859C14 13.1049 14 11.8478 14 9.33366V8.00033C14 5.48617 14 4.22909 13.2189 3.44804C12.4379 2.66699 11.1808 2.66699 8.66667 2.66699Z" stroke="#3D3D3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M2 6.66699H14" stroke="#3D3D3D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.6668 1.33301V3.99967M5.3335 1.33301V3.99967" stroke="#3D3D3D" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8.66667 2.66699H7.33333C4.81917 2.66699 3.5621 2.66699 2.78105 3.44804C2 4.22909 2 5.48617 2 8.00033V9.33366C2 11.8478 2 13.1049 2.78105 13.8859C3.5621 14.667 4.81917 14.667 7.33333 14.667H8.66667C11.1808 14.667 12.4379 14.667 13.2189 13.8859C14 13.1049 14 11.8478 14 9.33366V8.00033C14 5.48617 14 4.22909 13.2189 3.44804C12.4379 2.66699 11.1808 2.66699 8.66667 2.66699Z" stroke="#3D3D3D" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M2 6.66699H14" stroke="#3D3D3D" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg> {appointment.date}</div>
                       <div className="flex items-center gap-1 text-sm text-gray-600">
                         <Clock className="w-4 h-4" />
@@ -315,7 +315,7 @@ export default function AppointmentDashboard() {
                         <button className="w-full flex justify-center gap-2 items-center bg-[#FBF7EB]  px-3 py-1 text-sm border border-orange-200 text-[#93531F] rounded-md  focus:outline-none focus:ring-2 focus:ring-orange-500">
                           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.1177 21.367C13.6841 21.773 13.1044 22 12.5011 22C11.8978 22 11.3182 21.773 10.8845 21.367C6.91302 17.626 1.59076 13.4469 4.18627 7.37966C5.58963 4.09916 8.95834 2 12.5011 2C16.0439 2 19.4126 4.09916 20.816 7.37966C23.4082 13.4393 18.099 17.6389 14.1177 21.367Z" stroke="#93531F" strokeWidth="1.5" />
-                            <path d="M9.5 11.8333C9.5 11.8333 10.375 11.8333 11.25 13.5C11.25 13.5 14.0294 9.33333 16.5 8.5" stroke="#93531F" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9.5 11.8333C9.5 11.8333 10.375 11.8333 11.25 13.5C11.25 13.5 14.0294 9.33333 16.5 8.5" stroke="#93531F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
 
                           Check In
@@ -344,12 +344,12 @@ export default function AppointmentDashboard() {
                           Start Appointment
                         </button></Link>
                     )}
-                    {!appointment.canStartAppointment && (
+                   {/* {!appointment.canStartAppointment && (
 
                       <button className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md hover:bg-[#2E8BC9] focus:outline-none focus:ring-2 focus:ring-blue-500">
                         View Details
                       </button>
-                    )}
+                    )} */}
                   </div>
                 </div>
               ))}
